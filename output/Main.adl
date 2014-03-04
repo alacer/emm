@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<applicationSet xmlns="http://www.ibm.com/xmlns/prod/streams/application" name="Main.appset" productVersion="3.2.0.0" xmlns:tt="http://www.ibm.com/xmlns/prod/streams/spl/tupleType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <description>Main application set</description>
+
+  <application applicationDirectory="../." applicationScope="Default" checkpointDirectory="../data/ckpt" dataDirectory="../data" name="Main" outputDirectory="/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output" version="1.0.0">
+    <libraries/>
+    <hostpools>
+      <hostpool index="0" membershipMode="shared" name="$default"/>
+    </hostpools>
+    <tupleTypes>
+      <tupleType index="0">
+        <attribute name="line" type="rstring"/>
+        <tuple>
+          <tt:attr name="line" type="rstring"/>
+        </tuple>
+      </tupleType>
+      <tupleType index="1">
+        <attribute name="origin" type="rstring"/>
+        <attribute name="path" type="rstring"/>
+        <tuple>
+          <tt:attr name="origin" type="rstring"/>
+          <tt:attr name="path" type="rstring"/>
+        </tuple>
+      </tupleType>
+      <tupleType index="2">
+        <attribute name="origin" type="rstring"/>
+        <attribute name="path" type="rstring"/>
+        <attribute name="prediction" type="list&lt;rstring>"/>
+        <tuple>
+          <tt:attr name="origin" type="rstring"/>
+          <tt:attr name="path" type="rstring"/>
+          <tt:attr name="prediction">
+            <tt:list elementType="rstring"/>
+          </tt:attr>
+        </tuple>
+      </tupleType>
+    </tupleTypes>
+    <pes>
+      <pe class="BeJwzNEnMS8yprEpNCS4pSk3MjTdOSUqPNzRJy8wpSS2Ci1pk5kFZhkYFiUXFcAkADREYBO" index="0" language="C++" optimized="true" relocatable="false" restartable="false">
+        <envVars/>
+        <executable digest="Ksn9ROkX1MdGZlBkpKXzhS8hW3w=" dynamicLoad="true">
+          <wrapper>none</wrapper>
+          <executableUri>bin/Main-a.dpe</executableUri>
+          <arguments/>
+          <dependencies/>
+        </executable>
+        <operInstances>
+          <operInstance class="inStream" definitionIndex="0" index="0" name="inStream" singleThreadedOnInputs="true" singleThreadedOnOutputs="true">
+            <resources>
+              <poolLocation poolIndex="0"/>
+            </resources>
+            <runtimeConstants>
+              <runtimeConstant name="lit$0" value="&quot;../data/first-100-test-log.txt&quot;"/>
+            </runtimeConstants>
+            <inputPorts/>
+            <outputPorts>
+              <outputPort index="0" isMutable="true" name="inStream" streamName="inStream" tupleTypeIndex="0" viewable="true">
+                <intraPeConnection iportIndex="0" operInstanceIndex="1"/>
+              </outputPort>
+            </outputPorts>
+          </operInstance>
+          <operInstance class="parsedStream" definitionIndex="1" index="1" name="parsedStream" singleThreadedOnInputs="true" singleThreadedOnOutputs="true">
+            <resources>
+              <poolLocation poolIndex="0"/>
+            </resources>
+            <runtimeConstants>
+              <runtimeConstant name="lit$0" value="&quot;../rsrc/parse.R&quot;"/>
+              <runtimeConstant name="lit$1" value="&quot;origin&quot;"/>
+              <runtimeConstant name="lit$2" value="&quot;path&quot;"/>
+            </runtimeConstants>
+            <inputPorts>
+              <inputPort index="0" isMutable="false" name="inStream" tupleTypeIndex="0">
+                <intraPeConnection operInstanceIndex="0" oportIndex="0"/>
+              </inputPort>
+            </inputPorts>
+            <outputPorts>
+              <outputPort index="0" isMutable="true" name="parsedStream" streamName="parsedStream" tupleTypeIndex="1" viewable="true">
+                <intraPeConnection iportIndex="0" operInstanceIndex="2"/>
+              </outputPort>
+            </outputPorts>
+          </operInstance>
+          <operInstance class="filteredStream" definitionIndex="2" index="2" name="filteredStream" singleThreadedOnInputs="true" singleThreadedOnOutputs="true">
+            <resources>
+              <poolLocation poolIndex="0"/>
+            </resources>
+            <runtimeConstants>
+              <runtimeConstant name="lit$0" value="&quot;filter me&quot;"/>
+            </runtimeConstants>
+            <inputPorts>
+              <inputPort index="0" isMutable="false" name="parsedStream" tupleTypeIndex="1">
+                <intraPeConnection operInstanceIndex="1" oportIndex="0"/>
+              </inputPort>
+            </inputPorts>
+            <outputPorts>
+              <outputPort index="0" isMutable="false" name="filteredStream" streamName="filteredStream" tupleTypeIndex="1" viewable="true">
+                <intraPeConnection iportIndex="0" operInstanceIndex="3"/>
+              </outputPort>
+            </outputPorts>
+          </operInstance>
+          <operInstance class="analyzedStream" definitionIndex="1" index="3" name="analyzedStream" singleThreadedOnInputs="true" singleThreadedOnOutputs="true">
+            <resources>
+              <poolLocation poolIndex="0"/>
+            </resources>
+            <runtimeConstants>
+              <runtimeConstant name="lit$0" value="&quot;../rsrc/predict.R&quot;"/>
+              <runtimeConstant name="lit$1" value="&quot;prediction&quot;"/>
+            </runtimeConstants>
+            <inputPorts>
+              <inputPort index="0" isMutable="false" name="filteredStream" tupleTypeIndex="1">
+                <intraPeConnection operInstanceIndex="2" oportIndex="0"/>
+              </inputPort>
+            </inputPorts>
+            <outputPorts>
+              <outputPort index="0" isMutable="true" name="analyzedStream" streamName="analyzedStream" tupleTypeIndex="2" viewable="true">
+                <intraPeConnection iportIndex="0" operInstanceIndex="4"/>
+              </outputPort>
+            </outputPorts>
+          </operInstance>
+          <operInstance class="dbg" definitionIndex="3" index="4" name="dbg" singleThreadedOnInputs="true" singleThreadedOnOutputs="true">
+            <resources>
+              <poolLocation poolIndex="0"/>
+            </resources>
+            <runtimeConstants>
+              <runtimeConstant name="lit$0" value="&quot;result.txt&quot;"/>
+            </runtimeConstants>
+            <inputPorts>
+              <inputPort index="0" isMutable="false" name="analyzedStream" tupleTypeIndex="2">
+                <intraPeConnection operInstanceIndex="3" oportIndex="0"/>
+              </inputPort>
+            </inputPorts>
+            <outputPorts/>
+          </operInstance>
+        </operInstances>
+        <tracing level="error"/>
+        <inputPorts/>
+        <outputPorts/>
+      </pe>
+    </pes>
+    <operDefinitions>
+      <operDefinition index="0" kind="spl.adapter::FileSource">
+        <customMetricIndicies>
+          <customMetricIndex>0</customMetricIndex>
+          <customMetricIndex>1</customMetricIndex>
+        </customMetricIndicies>
+      </operDefinition>
+      <operDefinition index="1" kind="com.ibm.streams.rproject::RScript">
+        <customMetricIndicies>
+          <customMetricIndex>2</customMetricIndex>
+        </customMetricIndicies>
+      </operDefinition>
+      <operDefinition index="2" kind="spl.relational::Filter"/>
+      <operDefinition index="3" kind="spl.adapter::FileSink">
+        <customMetricIndicies>
+          <customMetricIndex>3</customMetricIndex>
+          <customMetricIndex>4</customMetricIndex>
+        </customMetricIndicies>
+      </operDefinition>
+    </operDefinitions>
+    <composites>
+      <sourceUris>
+        <uri index="0" path="file:///home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/Main.spl"/>
+      </sourceUris>
+      <compositeOpers>
+        <compositeOper endLine="76" index="0" kind="Main" numberOfInputPorts="0" numberOfOutputPorts="0" sourceIndex="0" startLine="28" toolkitIndex="0">
+          <description>Main Composite</description>
+        </compositeOper>
+      </compositeOpers>
+      <compositeOperInstances>
+        <compositeOperInstance compositeOperIndex="0" endLine="76" index="5" name="Main" sourceIndex="0" startLine="28">
+          <primitiveOperInstance endLine="34" index="0" kind="spl.adapter::FileSource" name="inStream" sourceIndex="0" startLine="31" toolkitIndex="1">
+            <outputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="1" operName="parsedStream" portIndex="0" portKind="input"/>
+                </connections>
+              </port>
+            </outputPorts>
+          </primitiveOperInstance>
+          <primitiveOperInstance endLine="48" index="1" kind="com.ibm.streams.rproject::RScript" name="parsedStream" sourceIndex="0" startLine="37" toolkitIndex="2">
+            <inputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="0" operName="inStream" portIndex="0" portKind="output"/>
+                </connections>
+              </port>
+            </inputPorts>
+            <outputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="2" operName="filteredStream" portIndex="0" portKind="input"/>
+                </connections>
+              </port>
+            </outputPorts>
+          </primitiveOperInstance>
+          <primitiveOperInstance endLine="54" index="2" kind="spl.relational::Filter" name="filteredStream" sourceIndex="0" startLine="51" toolkitIndex="1">
+            <inputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="1" operName="parsedStream" portIndex="0" portKind="output"/>
+                </connections>
+              </port>
+            </inputPorts>
+            <outputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="3" operName="analyzedStream" portIndex="0" portKind="input"/>
+                </connections>
+              </port>
+            </outputPorts>
+          </primitiveOperInstance>
+          <primitiveOperInstance endLine="68" index="3" kind="com.ibm.streams.rproject::RScript" name="analyzedStream" sourceIndex="0" startLine="57" toolkitIndex="2">
+            <inputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="2" operName="filteredStream" portIndex="0" portKind="output"/>
+                </connections>
+              </port>
+            </inputPorts>
+            <outputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="4" operName="dbg" portIndex="0" portKind="input"/>
+                </connections>
+              </port>
+            </outputPorts>
+          </primitiveOperInstance>
+          <primitiveOperInstance endLine="75" index="4" kind="spl.adapter::FileSink" name="dbg" sourceIndex="0" startLine="71" toolkitIndex="1">
+            <inputPorts>
+              <port index="0">
+                <connections>
+                  <connection operIndex="3" operName="analyzedStream" portIndex="0" portKind="output"/>
+                </connections>
+              </port>
+            </inputPorts>
+          </primitiveOperInstance>
+        </compositeOperInstance>
+      </compositeOperInstances>
+    </composites>
+    <toolkits>
+      <toolkit index="0" name="Model" uri="file:///home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel" version="1.0.0"/>
+      <toolkit index="1" name="spl" uri="file:///opt/ibm/InfoSphereStreams/toolkits/spl" version="1.1.0"/>
+      <toolkit index="2" name="com.ibm.streams.rproject" uri="file:///opt/ibm/InfoSphereStreams/toolkits/com.ibm.streams.rproject" version="1.0.100"/>
+    </toolkits>
+    <customMetrics>
+      <customMetric index="0" kind="Counter" name="nFilesOpened">
+        <description>Number of files opened by the FileSource operator</description>
+      </customMetric>
+      <customMetric index="1" kind="Counter" name="nInvalidTuples">
+        <description>Number of tuples that failed to read correctly</description>
+      </customMetric>
+      <customMetric index="2" kind="Counter" name="failedTuples">
+        <description>Number of tuples which result in a failure running the R script.</description>
+      </customMetric>
+      <customMetric index="3" kind="Counter" name="nFilesOpened">
+        <description>Number of files opened by the FileSink operator</description>
+      </customMetric>
+      <customMetric index="4" kind="Counter" name="nTupleWriteErrors">
+        <description>Number of tuple writes that failed</description>
+      </customMetric>
+    </customMetrics>
+  </application>
+
+</applicationSet>

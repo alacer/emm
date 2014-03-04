@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<tupleModel xmlns="http://www.ibm.com/xmlns/prod/streams/spl/tuple" class="BeJwrMco0ykxJMzRISy0qyczJrEotAgBCmgcW" equalitySupported="true" facade="false" splType="tuple&lt;int32 id,float32 fertilizer>" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <headers/>
+
+  <attributes>
+    <attribute>
+      <name>id</name>
+      <cppType>SPL::int32</cppType>
+      <splType>int32</splType>
+    </attribute>
+    <attribute>
+      <name>fertilizer</name>
+      <cppType>SPL::float32</cppType>
+      <splType>float32</splType>
+    </attribute>
+  </attributes>
+
+</tupleModel>

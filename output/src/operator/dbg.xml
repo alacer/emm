@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<operatorInstanceModel xmlns="http://www.ibm.com/xmlns/prod/streams/spl/operator/instance" xmlns:tt="http://www.ibm.com/xmlns/prod/streams/spl/tupleType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <context>
+    <kind>spl.adapter::FileSink</kind>
+    <class>dbg</class>
+    <operatorModelDirectory>/opt/ibm/InfoSphereStreams/toolkits/spl/spl/adapter/FileSink</operatorModelDirectory>
+    <applicationDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel</applicationDirectory>
+    <dataDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/data</dataDirectory>
+    <outputDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output</outputDirectory>
+    <optimized>true</optimized>
+    <verbose>false</verbose>
+    <networkByteOrdering>false</networkByteOrdering>
+    <codeBeautification>false</codeBeautification>
+    <includes>
+      <include>"../type/BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue.h"</include>
+      <include>"../type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.h"</include>
+    </includes>
+    <stateVariables/>
+    <runtimeConstants>
+      <runtimeConstant>
+        <name>lit$0</name>
+        <cppType>SPL::rstring</cppType>
+        <splType>rstring</splType>
+        <value>"result.txt"</value>
+      </runtimeConstant>
+    </runtimeConstants>
+    <sourceLocation>
+      <file>Main.spl</file>
+      <line>71</line>
+      <column>5</column>
+    </sourceLocation>
+    <productVersion>3.2.0.0</productVersion>
+    <checkpointKind>none</checkpointKind>
+  </context>
+
+  <parameters>
+    <parameter>
+      <name>format</name>
+      <values>
+        <value>
+          <cppType>DataFormat</cppType>
+          <splType>DataFormat</splType>
+          <hasRuntimeConstant>false</hasRuntimeConstant>
+          <cppExpression>csv</cppExpression>
+          <splExpression>csv</splExpression>
+          <hasFunctions>false</hasFunctions>
+          <hasSideEffects>false</hasSideEffects>
+          <hasStreamAttributes>false</hasStreamAttributes>
+          <parameterExpressionMode>CustomLiteral</parameterExpressionMode>
+          <sourceLocation>
+            <file>Main.spl</file>
+            <line>73</line>
+            <column>18</column>
+          </sourceLocation>
+        </value>
+      </values>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>73</line>
+        <column>9</column>
+      </sourceLocation>
+    </parameter>
+    <parameter>
+      <name>file</name>
+      <values>
+        <value>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+          <hasRuntimeConstant>true</hasRuntimeConstant>
+          <cppExpression>lit$0</cppExpression>
+          <splExpression>"result.txt"</splExpression>
+          <hasFunctions>false</hasFunctions>
+          <hasSideEffects>false</hasSideEffects>
+          <hasStreamAttributes>false</hasStreamAttributes>
+          <parameterExpressionMode>Expression</parameterExpressionMode>
+          <sourceLocation>
+            <file>Main.spl</file>
+            <line>74</line>
+            <column>18</column>
+          </sourceLocation>
+        </value>
+      </values>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>74</line>
+        <column>9</column>
+      </sourceLocation>
+    </parameter>
+  </parameters>
+
+  <inputPorts>
+    <inputPort>
+      <index>0</index>
+      <tupleCppName>iport$0</tupleCppName>
+      <tupleCppType>SPL::BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue</tupleCppType>
+      <tupleSPLType>tuple&lt;rstring origin,rstring path,list&lt;rstring&gt; prediction&gt;</tupleSPLType>
+      <facade>false</facade>
+      <mutationAllowed>false</mutationAllowed>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>71</line>
+        <column>26</column>
+      </sourceLocation>
+      <attributes>
+        <attribute>
+          <name>origin</name>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+        </attribute>
+        <attribute>
+          <name>path</name>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+        </attribute>
+        <attribute>
+          <name>prediction</name>
+          <cppType>SPL::list&lt;SPL::rstring &gt;</cppType>
+          <splType>list&lt;rstring&gt;</splType>
+        </attribute>
+      </attributes>
+      <tuple>
+        <tt:attr name="origin" type="rstring"/>
+        <tt:attr name="path" type="rstring"/>
+        <tt:attr name="prediction">
+          <tt:list elementType="rstring"/>
+        </tt:attr>
+      </tuple>
+    </inputPort>
+  </inputPorts>
+
+  <outputPorts/>
+
+</operatorInstanceModel>

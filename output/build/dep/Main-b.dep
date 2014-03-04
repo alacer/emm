@@ -1,0 +1,4 @@
+	@$(CXX) $(SPL_CXXFLAGS) -o bin/Main-b.dpe -fPIC -shared $(PEMain-b) $(SPL_LDFLAGS)build/pe/BeJwzNCpILCpOTQkuKUpNzI0HACseAWu.o \
+	    build/operator/parsedStream.o \
+	    build/type/BeJwrMSo2yy_1KTM_1MKzYpSCzJAAAzTAYs.o \
+	    build/type/BeJwrMSw2ycnMSwUADOECD1.o 

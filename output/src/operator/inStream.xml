@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<operatorInstanceModel xmlns="http://www.ibm.com/xmlns/prod/streams/spl/operator/instance" xmlns:tt="http://www.ibm.com/xmlns/prod/streams/spl/tupleType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <context>
+    <kind>spl.adapter::FileSource</kind>
+    <class>inStream</class>
+    <operatorModelDirectory>/opt/ibm/InfoSphereStreams/toolkits/spl/spl/adapter/FileSource</operatorModelDirectory>
+    <applicationDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel</applicationDirectory>
+    <dataDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/data</dataDirectory>
+    <outputDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output</outputDirectory>
+    <optimized>true</optimized>
+    <verbose>false</verbose>
+    <networkByteOrdering>false</networkByteOrdering>
+    <codeBeautification>false</codeBeautification>
+    <includes>
+      <include>"../type/BeJwrMSw2ycnMSwUADOECD1.h"</include>
+    </includes>
+    <stateVariables/>
+    <runtimeConstants>
+      <runtimeConstant>
+        <name>lit$0</name>
+        <cppType>SPL::rstring</cppType>
+        <splType>rstring</splType>
+        <value>"test-data.txt"</value>
+      </runtimeConstant>
+    </runtimeConstants>
+    <sourceLocation>
+      <file>Main.spl</file>
+      <line>31</line>
+      <column>5</column>
+    </sourceLocation>
+    <productVersion>3.2.0.0</productVersion>
+    <checkpointKind>none</checkpointKind>
+  </context>
+
+  <parameters>
+    <parameter>
+      <name>file</name>
+      <values>
+        <value>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+          <hasRuntimeConstant>true</hasRuntimeConstant>
+          <cppExpression>lit$0</cppExpression>
+          <splExpression>"test-data.txt"</splExpression>
+          <hasFunctions>false</hasFunctions>
+          <hasSideEffects>false</hasSideEffects>
+          <hasStreamAttributes>false</hasStreamAttributes>
+          <parameterExpressionMode>AttributeFree</parameterExpressionMode>
+          <sourceLocation>
+            <file>Main.spl</file>
+            <line>33</line>
+            <column>21</column>
+          </sourceLocation>
+        </value>
+      </values>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>33</line>
+        <column>14</column>
+      </sourceLocation>
+    </parameter>
+  </parameters>
+
+  <inputPorts/>
+
+  <outputPorts>
+    <outputPort>
+      <index>0</index>
+      <tupleCppName>oport$0</tupleCppName>
+      <tupleCppType>SPL::BeJwrMSw2ycnMSwUADOECD1</tupleCppType>
+      <tupleSPLType>tuple&lt;rstring line&gt;</tupleSPLType>
+      <facade>false</facade>
+      <mutationAllowed>true</mutationAllowed>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>31</line>
+        <column>5</column>
+      </sourceLocation>
+      <attributes>
+        <attribute>
+          <name>line</name>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+        </attribute>
+      </attributes>
+      <tuple>
+        <tt:attr name="line" type="rstring"/>
+      </tuple>
+      <finalPunctuationPortScope/>
+    </outputPort>
+  </outputPorts>
+
+</operatorInstanceModel>

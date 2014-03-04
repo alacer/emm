@@ -1,0 +1,77 @@
+// begin_generated_IBM_copyright_prolog                             
+//                                                                  
+// This is an automatically generated copyright prolog.             
+// After initializing,  DO NOT MODIFY OR MOVE                       
+// **************************************************************** 
+// THIS SAMPLE CODE IS PROVIDED ON AN "AS IS" BASIS. IBM MAKES NO   
+// REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, CONCERNING    
+// USE OF THE SAMPLE CODE, OR THE COMPLETENESS OR ACCURACY OF THE   
+// SAMPLE CODE. IBM DOES NOT WARRANT UNINTERRUPTED OR ERROR-FREE    
+// OPERATION OF THIS SAMPLE CODE. IBM IS NOT RESPONSIBLE FOR THE    
+// RESULTS OBTAINED FROM THE USE OF THE SAMPLE CODE OR ANY PORTION  
+// OF THIS SAMPLE CODE.                                             
+//                                                                  
+// LIMITATION OF LIABILITY. IN NO EVENT WILL IBM BE LIABLE TO ANY   
+// PARTY FOR ANY DIRECT, INDIRECT, SPECIAL OR OTHER CONSEQUENTIAL   
+// DAMAGES FOR ANY USE OF THIS SAMPLE CODE, THE USE OF CODE FROM    
+// THIS [ SAMPLE PACKAGE,] INCLUDING, WITHOUT LIMITATION, ANY LOST  
+// PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA   
+// ON YOUR INFORMATION HANDLING SYSTEM OR OTHERWISE.                
+//                                                                  
+// (C) Copyright IBM Corp. 2013, 2013  All Rights reserved.         
+//                                                                  
+// end_generated_IBM_copyright_prolog                               
+
+use com.ibm.streams.rproject::*;
+
+
+composite Main {
+  graph
+    // read entries from the log file
+    stream<rstring line> 
+    inStream = FileSource() {
+      param  file : "../data/first-100-test-log.txt";
+    } 
+ 
+    // parse the line using an R script
+    stream<rstring origin, rstring path> 
+    parsedStream = RScript(inStream) {
+      param
+        initializationScriptFileName : "../rsrc/parse-functions.R";
+        rScriptFileName : "../rsrc/parse.R";
+	streamAttributes : line;
+	rObjects : "log.entry"; 
+
+      output
+        parsedStream: origin = fromR("origin"),
+	              path = fromR("path");
+    }
+
+    // filter out invalid tuples:
+    stream<rstring origin, rstring path>
+    filteredStream = Filter(parsedStream) {
+      param filter : origin != "filter me";
+    }
+
+    // call the r script that will create the prediction
+    stream<rstring origin, rstring path, list<rstring> prediction> 
+    analyzedStream = RScript(filteredStream) {
+      param
+        initializationScriptFileName : "../rsrc/init_predict.R";
+        rScriptFileName : "../rsrc/predict.R";
+        streamAttributes : path;
+        rObjects : "path";
+          
+      output
+        analyzedStream:
+          prediction = fromR("prediction");
+    }
+
+    // send the results to a file
+    () as dbg = FileSink(analyzedStream) {
+      param
+        format : csv;
+        file   : "result.txt" ;   
+    }
+}
+

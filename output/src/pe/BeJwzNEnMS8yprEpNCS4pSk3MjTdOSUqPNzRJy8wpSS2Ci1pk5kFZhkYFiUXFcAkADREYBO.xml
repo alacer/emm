@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<peModel xmlns="http://www.ibm.com/xmlns/prod/streams/spl/pe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <context>
+    <class>BeJwzNEnMS8yprEpNCS4pSk3MjTdOSUqPNzRJy8wpSS2Ci1pk5kFZhkYFiUXFcAkADREYBO</class>
+    <nlLocation location="Install" path="/toolkits/com.ibm.streams.rproject" toolkitName="com.ibm.streams.rproject"/>
+    <avoidRuntimeYield>Auto</avoidRuntimeYield>
+  </context>
+
+  <operators>
+    <operator>
+      <class>analyzedStream</class>
+    </operator>
+    <operator>
+      <class>dbg</class>
+    </operator>
+    <operator>
+      <class>filteredStream</class>
+    </operator>
+    <operator>
+      <class>inStream</class>
+    </operator>
+    <operator>
+      <class>parsedStream</class>
+    </operator>
+  </operators>
+
+</peModel>

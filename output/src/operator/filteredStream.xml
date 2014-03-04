@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<operatorInstanceModel xmlns="http://www.ibm.com/xmlns/prod/streams/spl/operator/instance" xmlns:tt="http://www.ibm.com/xmlns/prod/streams/spl/tupleType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <context>
+    <kind>spl.relational::Filter</kind>
+    <class>filteredStream</class>
+    <operatorModelDirectory>/opt/ibm/InfoSphereStreams/toolkits/spl/spl/relational/Filter</operatorModelDirectory>
+    <applicationDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel</applicationDirectory>
+    <dataDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/data</dataDirectory>
+    <outputDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output</outputDirectory>
+    <optimized>true</optimized>
+    <verbose>false</verbose>
+    <networkByteOrdering>false</networkByteOrdering>
+    <codeBeautification>false</codeBeautification>
+    <includes>
+      <include>"../type/BeJwrMSo2yy_1KTM_1MKzYpSCzJAAAzTAYs.h"</include>
+    </includes>
+    <stateVariables/>
+    <runtimeConstants>
+      <runtimeConstant>
+        <name>lit$0</name>
+        <cppType>SPL::rstring</cppType>
+        <splType>rstring</splType>
+        <value>"filter me"</value>
+      </runtimeConstant>
+    </runtimeConstants>
+    <sourceLocation>
+      <file>Main.spl</file>
+      <line>52</line>
+      <column>5</column>
+    </sourceLocation>
+    <productVersion>3.2.0.0</productVersion>
+    <checkpointKind>none</checkpointKind>
+  </context>
+
+  <parameters>
+    <parameter>
+      <name>filter</name>
+      <values>
+        <value>
+          <cppType>SPL::boolean</cppType>
+          <splType>boolean</splType>
+          <hasRuntimeConstant>true</hasRuntimeConstant>
+          <cppExpression>(iport$0.get_origin() != lit$0)</cppExpression>
+          <splExpression>parsedStream.origin != "filter me"</splExpression>
+          <hasFunctions>false</hasFunctions>
+          <hasSideEffects>false</hasSideEffects>
+          <hasStreamAttributes>true</hasStreamAttributes>
+          <parameterExpressionMode>Expression</parameterExpressionMode>
+          <sourceLocation>
+            <file>Main.spl</file>
+            <line>54</line>
+            <column>22</column>
+          </sourceLocation>
+        </value>
+      </values>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>54</line>
+        <column>13</column>
+      </sourceLocation>
+    </parameter>
+  </parameters>
+
+  <inputPorts>
+    <inputPort>
+      <index>0</index>
+      <tupleCppName>iport$0</tupleCppName>
+      <tupleCppType>SPL::BeJwrMSo2yy_1KTM_1MKzYpSCzJAAAzTAYs</tupleCppType>
+      <tupleSPLType>tuple&lt;rstring origin,rstring path&gt;</tupleSPLType>
+      <facade>false</facade>
+      <mutationAllowed>false</mutationAllowed>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>53</line>
+        <column>29</column>
+      </sourceLocation>
+      <attributes>
+        <attribute>
+          <name>origin</name>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+        </attribute>
+        <attribute>
+          <name>path</name>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+        </attribute>
+      </attributes>
+      <tuple>
+        <tt:attr name="origin" type="rstring"/>
+        <tt:attr name="path" type="rstring"/>
+      </tuple>
+    </inputPort>
+  </inputPorts>
+
+  <outputPorts>
+    <outputPort>
+      <index>0</index>
+      <tupleCppName>oport$0</tupleCppName>
+      <tupleCppType>SPL::BeJwrMSo2yy_1KTM_1MKzYpSCzJAAAzTAYs</tupleCppType>
+      <tupleSPLType>tuple&lt;rstring origin,rstring path&gt;</tupleSPLType>
+      <facade>false</facade>
+      <mutationAllowed>false</mutationAllowed>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>52</line>
+        <column>5</column>
+      </sourceLocation>
+      <attributes>
+        <attribute>
+          <name>origin</name>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+          <assignment>
+            <sourceLocation>
+              <file>&lt;invalid&gt;</file>
+              <line>-1</line>
+              <column>0</column>
+            </sourceLocation>
+            <values>
+              <value>
+                <cppType>SPL::rstring</cppType>
+                <splType>rstring</splType>
+                <hasRuntimeConstant>false</hasRuntimeConstant>
+                <cppExpression>iport$0.get_origin()</cppExpression>
+                <splExpression>parsedStream.origin</splExpression>
+                <hasFunctions>false</hasFunctions>
+                <hasSideEffects>false</hasSideEffects>
+                <hasStreamAttributes>true</hasStreamAttributes>
+                <sourceLocation>
+                  <file>&lt;invalid&gt;</file>
+                  <line>-1</line>
+                  <column>0</column>
+                </sourceLocation>
+              </value>
+            </values>
+          </assignment>
+        </attribute>
+        <attribute>
+          <name>path</name>
+          <cppType>SPL::rstring</cppType>
+          <splType>rstring</splType>
+          <assignment>
+            <sourceLocation>
+              <file>&lt;invalid&gt;</file>
+              <line>-1</line>
+              <column>0</column>
+            </sourceLocation>
+            <values>
+              <value>
+                <cppType>SPL::rstring</cppType>
+                <splType>rstring</splType>
+                <hasRuntimeConstant>false</hasRuntimeConstant>
+                <cppExpression>iport$0.get_path()</cppExpression>
+                <splExpression>parsedStream.path</splExpression>
+                <hasFunctions>false</hasFunctions>
+                <hasSideEffects>false</hasSideEffects>
+                <hasStreamAttributes>true</hasStreamAttributes>
+                <sourceLocation>
+                  <file>&lt;invalid&gt;</file>
+                  <line>-1</line>
+                  <column>0</column>
+                </sourceLocation>
+              </value>
+            </values>
+          </assignment>
+        </attribute>
+      </attributes>
+      <tuple>
+        <tt:attr name="origin" type="rstring"/>
+        <tt:attr name="path" type="rstring"/>
+      </tuple>
+      <finalPunctuationPortScope>
+        <port>0</port>
+      </finalPunctuationPortScope>
+    </outputPort>
+  </outputPorts>
+
+</operatorInstanceModel>

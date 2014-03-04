@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<peModel xmlns="http://www.ibm.com/xmlns/prod/streams/spl/pe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <context>
+    <class>BeJwzNCpILCpOTQkuKUpNzI0HACseAWu</class>
+    <nlLocation location="Install" path="/toolkits/com.ibm.streams.rproject" toolkitName="com.ibm.streams.rproject"/>
+    <avoidRuntimeYield>Auto</avoidRuntimeYield>
+  </context>
+
+  <operators>
+    <operator>
+      <class>parsedStream</class>
+    </operator>
+  </operators>
+
+</peModel>
