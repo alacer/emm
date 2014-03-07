@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fop version="1.0">
+    <accessibility>true</accessibility>
+    <target-resolution>240</target-resolution>
+    <renderers>
+        <renderer mime="application/pdf">
+            <fonts>
+                <!--                <referenced-fonts>
+                    <match font-family="Helvetica"/>
+                    <match font-family="Arial.*"/>
+                    <match font-family="Courier.*"/>
+                </referenced-fonts>
+
+-->
+               <!-- <substitutions>
+                    <substitution>
+                        <from font-family="ArialUnicodeMS"/>
+                        <to font-family="Helvetica"/>
+                    </substitution>
+
+                </substitutions>-->
+        <directory>/usr/lpp/X11/lib/X11/fonts/TrueType</directory>
+ 
+                <auto-detect/>
+            </fonts>
+        </renderer>
+    </renderers>
+</fop>

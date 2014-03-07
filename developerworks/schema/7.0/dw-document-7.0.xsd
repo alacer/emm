@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-7.0.xsd"/>
+	<xsd:include schemaLocation="dw-home-7.0.xsd"/>
+	<!-- Project Defiant jpp 10/03/11: Added dw-results content type -->
+	<xsd:include schemaLocation="dw-results-7.0.xsd"/>
+	<!-- ================================================================ -->
+	<!-- Elements that define document types                              -->
+	<!-- ================================================================ -->
+	<!-- <dw-document> element, the root element for everything           -->
+	<!-- ================================================================ -->
+	<xsd:element name="dw-document">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>The root element of all dW content</title>
+				<desc>Contains a dW document.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice>
+				<xsd:element ref="dw-home"/>
+				<!-- Project Defiant jpp 10/03/11: Added dw-results element -->
+				<xsd:element ref="dw-results"/>
+			</xsd:choice>
+			<!-- v17 Enablement jpp 09/29/11: Added local-site attribute to dw-document -->
+			<xsd:attribute name="local-site" type="site" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

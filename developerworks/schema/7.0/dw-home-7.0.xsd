@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-7.0.xsd"/>
+	<xsd:element name="dw-home">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>developerWorks worldwide or local site home page</title>
+				<desc>Defines the elements for developerWorks worldwide or local site home pages.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="id"/>
+				<!-- Project Defiant jpp 10/10/11: Removed title-tag element; Using title element instead to create title tag -->
+				<xsd:element ref="keywords"/>				
+				<!-- Removed meta-dctype and meta-dcsubject for v7.0 -->
+				<!-- <xsd:element ref="meta-dctype" minOccurs="0"/> -->
+				<!-- <xsd:element ref="meta-dcsubject" minOccurs="0"/> -->				
+				<xsd:element ref="meta-last-updated" minOccurs="0"/>
+				<xsd:element ref="content-area-primary"/>
+				<!-- Also required for CMA use -->
+				<xsd:element ref="title"/>
+				<xsd:element ref="date-published"/>
+				<xsd:element ref="date-updated" minOccurs="0"/>
+				<xsd:element ref="abstract"/>
+				<xsd:element ref="leadspace-module"/>
+				<!-- Interior columns -->	
+				<xsd:element ref="module" minOccurs="3" maxOccurs="3"/>
+				<!-- v17 Enablement jpp 09/10/11: Referenced module-promotion -->
+				<xsd:element ref="module-promotion"/>
+				<!-- Local site poll -->
+				<!-- <xsd:element ref="poll-id" minOccurs="0"/> -->
+			</xsd:sequence>
+			<!-- v17 Enablement jpp 09/29/11: Moved local-site attribute to dw-document -->
+			<xsd:attribute name="layout" type="layout-types" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

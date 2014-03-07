@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-6.0.xsd"/>
+	<xsd:element name="dw-trial-program-pages">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>Define trial program pagegroup</title>
+				<desc>Defines a pagegroup for trial or evaluation software. A pagegroup is a set of related landing pages with common primary navigation.  Individual pages in the pagegroup may also contain a secondary navigation area that references multiple pages.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="pagegroup"/>
+			</xsd:sequence>
+			<xsd:attribute name="local-site" type="site" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

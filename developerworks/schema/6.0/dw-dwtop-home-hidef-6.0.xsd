@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-6.0.xsd"/>
+	<xsd:element name="dw-dwtop-home-hidef">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>developerWorks worldwide or local site home page in high-definition format</title>
+				<desc>Defines the elements for developerWorks worldwide or local site home pages in high-definition format.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="id"/>
+				<xsd:element ref="meta-dctype" minOccurs="0"/>
+				<xsd:element ref="meta-dcsubject" minOccurs="0"/>
+				<xsd:element ref="meta-last-updated" minOccurs="0"/>
+				<xsd:element ref="content-area-primary"/>
+				<xsd:element ref="title"/>
+				<xsd:element ref="subtitle" minOccurs="0"/>
+				<xsd:element ref="date-published"/>
+				<xsd:element ref="date-updated" minOccurs="0"/>
+				<!-- Local site poll -->
+				<xsd:element ref="poll-id" minOccurs="0"/>
+				<!-- 6.0 xM R1 12/16/10 jpp: Changed to featured-content-module element -->	
+				<xsd:element ref="featured-content-module"/>	
+				<xsd:element ref="module-tabbed" minOccurs="0"/>
+				<xsd:element ref="module" maxOccurs="unbounded"/>
+				<!-- Right column -->
+				<!-- High Visibility module -->
+				<xsd:element ref="module-high-visibility" minOccurs="0" maxOccurs="3"/>
+				<!-- Spotlight module -->
+				<xsd:element ref="module-spotlight" minOccurs="0"/>
+				<!-- Generic modules -->
+				<!-- 6.0 xM R1 12/14/10 jpp:  Added top-right-include element -->	
+				<xsd:element name="top-right-include" type="generic-right-box-include" minOccurs="0" maxOccurs="3"/>
+				<xsd:element ref="right-box" minOccurs="0" maxOccurs="3"/>
+				<!-- 6.0 xM R1 12/14/10 jpp:  Added bottom-right-include element -->	
+				<xsd:element name="bottom-right-include" type="generic-right-box-include" minOccurs="0" maxOccurs="3"/>
+			</xsd:sequence>
+			<xsd:attribute name="local-site" type="site" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

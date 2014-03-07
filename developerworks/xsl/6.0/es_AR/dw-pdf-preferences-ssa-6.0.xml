@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================
+  This document contains the filenames, fonts, and spacing
+  for the ssa site. 
+
+  Created 14 February 2011 by Ian Shields.
+  Brought to you by your friends at developerWorks:
+  ibm.com/developerWorks.
+  =============================================== -->
+<!-- 20110124 ibs DR 3467. File relocated in preparation for 6.0 PDF with FOP 1.0  -->
+<preferences>
+    <custom-content-files>
+        <!-- Start image file references: -->
+        <ibm-logo-banner>http://www.ibm.com/developerworks/i/ibmpos_black.png</ibm-logo-banner>
+        <dw-logo>http://www.ibm.com/developerworks/i/dwmark1111.png</dw-logo>
+        <!-- End image file references -->
+    </custom-content-files>
+    <!-- Page size can be a4, letter or common. 
+        Common paper size is narrow enough for a4 and short enough for letter
+        a4 -                210 x 297 mm (8.3 x 11.7 inches)
+        letter -            8.5 x 11 inches (216 x 279 mm)
+        common -      210mm x 11 inches (210 x 279 mm or 6.3 x 11 in)) 
+    -->
+    <page-size>common</page-size>
+   <fonts>
+        <default-font color="#505050" style="" weight="">Liberation Sans,WT Sans
+            SC</default-font>
+        <default-font-bold color="#000000" style="" weight="">Liberation Sans Bold,WT Sans
+            SC</default-font-bold>
+        <default-font-italic color="#909090" style="" weight="">Liberation Sans Italic,WT
+            Sans SC</default-font-italic>
+        <default-font-italic-bold color="#585858" style="" weight="">Liberation Sans
+            Bold Italic,WT Sans SC</default-font-italic-bold>
+        <monospace-font color="#484848" style="" weight="">Liberation Mono,WT Sans Duo
+            SC</monospace-font>
+        <monospace-font-bold color="#000000" style="" weight="">Liberation Mono Bold,WT Sans
+            Duo SC</monospace-font-bold>
+        <monospace-font-italic color="#909090" style="" weight="">Liberation Mono
+            Italic,WT Sans Duo SC</monospace-font-italic>
+        <monospace-font-italic-bold color="#585858" style="" weight="">Liberation Mono Bold
+            Italic,WT Sans Duo SC</monospace-font-italic-bold>
+        <!-- Heading and title font sizes -->
+        <section-title-font size="18pt"/>
+        <title-font size="20pt"/>
+        <subtitle-font size="16pt"/>
+        <major-heading-font size="16pt"/>
+        <heading-font size="12pt"/>
+        <header-font size="9pt"/>
+        <footer-font size="9pt"/>
+        <!-- Body font sizes -->
+        <default-font size="12pt"/>
+        <pre-and-tt-text-font size="8pt"/>
+        <monospaced-font size="8pt"/>
+        <sidebar-font size="9pt"/>
+        <code-section-font size="8pt"/>
+        <code-inline-font size="10pt"/>
+        <table-cell-font size="8pt"/>
+    <!-- 2012-02-27 IBS Handle inline code in tables -->
+        <table-cell-monospaced-font size="8pt"/>
+        <!-- Spacing -->
+
+        <title-space-before>8pt</title-space-before>
+        <title-space-after>8pt</title-space-after>
+        <section-space-before>24pt</section-space-before>
+        <section-space-after>12pt</section-space-after>
+        <docbody-space-before>8pt</docbody-space-before>
+        <docbody-space-after>8pt</docbody-space-after>
+        <heading-space-before>4pt</heading-space-before>
+        <heading-space-after>12pt</heading-space-after>
+        <resource-space-before>8pt</resource-space-before>
+        <resource-space-after>8pt</resource-space-after>
+        <default-space-before>12pt</default-space-before>
+        <default-space-after>12pt</default-space-after>
+        <minimum-space-before>1pt</minimum-space-before>
+        <minimum-space-after>1pt</minimum-space-after>
+        <maximum-space-before>24pt</maximum-space-before>
+        <maximum-space-after>24pt</maximum-space-after>
+    </fonts>
+    <space>
+        <!-- Defaults for spacing -->
+    </space>
+    <colors>
+        <!-- Defaults for colors -->
+        <background-color>#ffffff</background-color>
+        <!--        <foreground-color>#000000</foreground-color>
+        <shading-color>#3333CC</shading-color>
+        <title-color>#000000</title-color>
+        <subtitle-color>#333333</subtitle-color>-->
+        <series-color>#999999</series-color>
+        <section-title-color>#000000</section-title-color>
+        <internal-link-color>blue</internal-link-color>
+        <external-link-color>blue</external-link-color>
+        <table-th-color>#efefef</table-th-color>
+        <table-border-color>#efefef</table-border-color>
+        <table-caption-color>#3c5f84</table-caption-color>
+        <code-background-color>#eeeeee</code-background-color>
+        <sidebar-background-color>#eeeeee</sidebar-background-color>
+    </colors>
+    <!--   <tables>
+        <section-width>450pt</section-width>
+        <table-width>450</table-width>
+        <code-width>500</code-width>
+        <sidebar-width>300</sidebar-width>
+        <table-column-width>75pt</table-column-width>
+        <masthead-width>500px</masthead-width>
+        <masthead-height>50px</masthead-height>
+        <header-width-a>200pt</header-width-a>
+        <header-width-b>284pt</header-width-b>
+        <footer-width-a>410pt</footer-width-a>
+        <footer-width-b>78pt</footer-width-b>
+    </tables>-->
+</preferences>
+

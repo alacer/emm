@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-6.0.xsd"/>
+	<xsd:include schemaLocation="dw-article-6.0.xsd"/>
+	<!-- 6.0 09/24/08 jpp-egd: Added XSD for dW home and top-level local site pages -->
+	<xsd:include schemaLocation="dw-dwtop-home-6.0.xsd"/>
+	<!-- 6.0 xM R1 10/11/10 jpp: Added XSD for dW high definition worldwide and local-site home pages -->
+	<xsd:include schemaLocation="dw-dwtop-home-hidef-6.0.xsd"/>
+	<!-- 6.0 11/04/08 egd: Added XSD for dW  ww and local site zone overview pages -->
+	<xsd:include schemaLocation="dw-dwtop-zoneoverview-6.0.xsd"/>
+   <!-- 6.0 xM r2.3 06/21/11 tdc: Added dw-knowledge-path -->
+	<xsd:include schemaLocation="dw-knowledge-path-6.0.xsd"/>		
+	<!-- Maverick 6.0 R2 egd 082909: Added XSD for dW  ww and local site landing generic pages -->
+	<xsd:include schemaLocation="dw-landing-generic-6.0.xsd"/>
+	<!-- Maverick 6.0 R3 jpp 07-15-10: Added XSD for dW  ww and local site landing generic pagegroup pages -->
+	<xsd:include schemaLocation="dw-landing-generic-pagegroup-6.0.xsd"/>
+	<!-- Maverick 6.0 R3 jpp 12-11-09: Added XSD for dW  ww and local site landing generic pagegroup hidef pages -->
+	<xsd:include schemaLocation="dw-landing-generic-pagegroup-hidef-6.0.xsd"/>
+	<!-- Maverick 6.0 R2 jpp-egd 072209: Added XSD for dW  ww and local site landing product pages -->
+	<xsd:include schemaLocation="dw-landing-product-6.0.xsd"/>
+	<!-- Maverick 6.0 R3 egd 081310: Added XSD for dW  ww and local site summary pages -->
+	<xsd:include schemaLocation="dw-summary-6.0.xsd"/>
+	<xsd:include schemaLocation="dw-sidefile-6.0.xsd"/>
+	<!-- Maverick 6.0 R3 jpp 07-15-10: Added XSD for dW  ww and local site trial program pages -->
+	<xsd:include schemaLocation="dw-trial-program-pages-6.0.xsd"/>
+	<xsd:include schemaLocation="dw-tutorial-6.0.xsd"/>
+	<!-- ================================================================ -->
+	<!-- Elements that define document types                              -->
+	<!-- ================================================================ -->
+	<!-- <dw-document> element, the root element for everything           -->
+	<!-- ================================================================ -->
+	<xsd:element name="dw-document">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>The root element of all dW content</title>
+				<desc>Contains a dW document.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice>
+				<xsd:element ref="dw-article"/>
+				<!-- 6.0 09/24/08 jpp-egd: Added document reference for dW home and top-level local site pages -->
+				<xsd:element ref="dw-dwtop-home"/>
+				<!-- 6.0 xM R1 10/11/10 jpp: Added document reference for dW high definition worldwide and local-site home pages -->
+				<xsd:element ref="dw-dwtop-home-hidef"/>
+				<!-- 6.0 09/24/08 egd: Added document reference for dW zone ww and local site overview pages -->
+				<xsd:element ref="dw-dwtop-zoneoverview"/>
+				<!-- 6.0 xM r2.3 06/21/11 tdc: Added document reference for dw-knowledge-path pages -->
+				<xsd:element ref="dw-knowledge-path"/>
+				<!-- Maverick 6.0 R2 egd 082909:  Added document reference for landing generic -->
+				<xsd:element ref="dw-landing-generic"/>
+				<!-- Maverick 6.0 R3 jpp 07-15-10:  Added document reference for landing generic pagegroup -->
+				<xsd:element ref="dw-landing-generic-pagegroup"/>
+				<!-- Maverick 6.0 R3 jpp 12-11-09:  Added document reference for landing generic pagegroup hidef -->
+				<xsd:element ref="dw-landing-generic-pagegroup-hidef"/>
+				<!-- Maverick 6.0 R2 jpp-egd 072209:  Added document reference for product landing -->
+				<xsd:element ref="dw-landing-product"/>
+				<!-- Maverick 6.0 R3 egd 081310:  Added document reference for summary pages -->
+				<xsd:element ref="dw-summary"/>
+				<xsd:element ref="dw-sidefile"/>
+				<!-- Maverick 6.0 R3 jpp 07-15-10:  Added document reference for trial program pages -->
+				<xsd:element ref="dw-trial-program-pages"/>
+				<xsd:element ref="dw-tutorial"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

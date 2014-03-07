@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2008-11-20 egd: Created the transform file for worldwide site -->
+<dw-content>
+<!-- BEGIN_TRANSFORM_FOR_DW_ARTICLE -->
+   <dw-article>
+	<!-- title tag -->
+	<output>
+		<output-name>titletag</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>titletag</parameter-value>
+		</parameter>
+	</output>	
+	<!-- 6.0 Maverick beta egd 06/14/08: added abstract tag -->
+	<output>
+		<output-name>abstract</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>abstract</parameter-value>
+		</parameter>
+	</output>	
+	<!-- 6.0 Maverick beta egd 06/14/08: added keywords tag -->
+	<output>
+		<output-name>keywords</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>keywords</parameter-value>
+		</parameter>
+	</output>	
+	<!-- dc.date meta tag -->
+	<output>	
+		<output-name>dcDate</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcDate</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.type meta tag -->
+	<output>
+		<output-name>dcType</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcType</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.subject meta tag -->
+	<output>	
+		<output-name>dcSubject</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcSubject</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.rights meta tag -->
+	<output>
+		<output-name>dcRights</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcRights</parameter-value>
+		</parameter>
+	</output>
+	<!-- ibm.effective meta tag -->
+	<output>
+		<output-name>ibmEffective</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>ibmEffective</parameter-value>
+		</parameter>
+	</output>
+		<!-- 6.0 Maverick R2 fix 082909 egd:  Added urltactic  -->
+	<output>
+		<output-name>urltactic</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>urltactic</parameter-value>
+		</parameter>
+	</output>
+	<!-- Web Feed Auto Discovery link rel in head -->
+	<output>
+		<output-name>webFeedDiscovery</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>webFeedDiscovery</parameter-value>
+		</parameter>
+	</output>
+	<!-- breadcrumb tags for the default (based on primary zone) and all other options, based on secondary zones.  app to check first for zone in the url and use that bct or, if no zone in incoming URL, then use default bct-  NOTE: included all zones (including ibm and none that are ww zones, but didn't include local-site only zones like grid and security. Did not include autonomic since it's going away -->
+	<!-- aix breadcrumb --> 
+	<output>
+		<output-name>aix_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>aix</parameter-value>
+			</parameter>
+	</output>
+	<!-- architecture breadcrumb --> 
+	<output>
+		<output-name>architecture_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>architecture</parameter-value>
+			</parameter>
+	</output>
+	<!-- 6.0 Maverick Phase 2 jpp 02/16/08: added breadcrumb output for 'data' -->
+	<!-- data (info mgmt) breadcrumb --> 
+	<output>
+		<output-name>data_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>data</parameter-value>
+			</parameter>
+	</output>	
+	<!-- db2 (info mgmt) breadcrumb --> 
+	<output>
+		<output-name>db2_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>db2</parameter-value>
+			</parameter>
+	</output>	
+	<!-- ibm (sample it projects) breadcrumb --> 
+	<output>
+		<output-name>ibm_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>ibm</parameter-value>
+			</parameter>
+	</output>
+	<!-- java breadcrumb --> 
+	<output>
+		<output-name>java_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>java</parameter-value>
+			</parameter>
+	</output>
+	<!-- linux breadcrumb -->
+	<output>
+		<output-name>linux_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>linux</parameter-value>
+			</parameter>
+	</output>
+	<!-- lotus breadcrumb --> 
+	<output>
+		<output-name>lotus_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>lotus</parameter-value>
+			</parameter>
+	</output>
+	<!-- opensource breadcrumb --> 
+	<output>
+		<output-name>opensource_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>opensource</parameter-value>
+			</parameter>
+	</output>
+	<!-- power (multicore acceleration) breadcrumb --> 
+	<output>
+		<output-name>power_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>power</parameter-value>
+			</parameter>
+	</output>
+	<!-- rational breadcrumb --> 
+	<output>
+		<output-name>rational_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>rational</parameter-value>
+			</parameter>
+	</output>
+	<!-- tivoli breadcrumb --> 
+	<output>
+		<output-name>tivoli_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>tivoli</parameter-value>
+			</parameter>
+	</output>
+	<!-- web (web development) breadcrumb --> 
+	<output>
+		<output-name>web_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>web</parameter-value>
+			</parameter>
+	</output>
+	<!-- webservices breadcrumb --> 
+	<output>
+	<output-name>webservices_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>webservices</parameter-value>
+			</parameter>
+	</output>
+	<!-- websphere breadcrumb --> 
+	<output>
+		<output-name>websphere_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>websphere</parameter-value>
+			</parameter>
+	</output>
+	<!-- xml breadcrumb --> 
+	<output>
+		<output-name>xml_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>xml</parameter-value>
+			</parameter>
+	</output>
+	<!-- none breadcrumb --> 
+	<output>
+		<output-name>none_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>none</parameter-value>
+			</parameter>
+	</output>
+	<!-- default breadcrumb --> 
+	<output>
+		<output-name>default_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>default</parameter-value>
+			</parameter>
+	</output>
+	<!-- page title -->
+	<output>
+		<output-name>title</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>title</parameter-value>
+		</parameter>
+	</output>
+	<!-- list of authors in summary area -->
+	<output>
+		<output-name>authorList</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>authorList</parameter-value>
+		</parameter>
+	</output>
+	<!-- abstract in summary area -->
+	<output>
+		<output-name>abstractSummary</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>abstractSummary</parameter-value>
+		</parameter>
+	</output>
+	<!-- series title in summary area -->
+	<output>
+		<output-name>seriesTitle</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>seriesTitle</parameter-value>
+		</parameter>
+	</output>
+	<!-- date published or date updated and original publish date in summary area -->
+	<output>
+		<output-name>date</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>date</parameter-value>
+		</parameter>
+	</output>
+	<!-- skill level in summary area -->
+	<output>
+		<output-name>skillLevel</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>skillLevel</parameter-value>
+		</parameter>
+	</output>
+	<!-- pfd in summary area -->
+	<output>
+		<output-name>pdf</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>pdf</parameter-value>
+		</parameter>
+	</output>
+	<!-- docbody -->
+	<output>
+		<output-name>docbody</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>docbody</parameter-value>
+		</parameter>
+	</output>
+	<!-- download table -->
+	<output>
+		<output-name>downloads</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>downloads</parameter-value>
+		</parameter>
+	</output>
+	<!-- resources -->
+	<output>
+		<output-name>resources</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>resources</parameter-value>
+		</parameter>
+		</output>
+	<!-- authorBio -->
+	<output>
+		<output-name>authorBio</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>authorBio</parameter-value>
+		</parameter>
+	</output>
+	<!-- meta data values for ratings -->
+	<output>
+		<output-name>ratingMeta</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>ratingMeta</parameter-value>
+		</parameter>
+	</output>
+	<!-- table of contents -->
+	<output>
+		<output-name>toc</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>toc</parameter-value>
+		</parameter>
+	</output>	
+   </dw-article>
+<!-- END_TRANSFORM_FOR_DW_ARTICLE -->
+<!-- BEGIN_TRANSFORM_FOR_DW_SIDEFILE -->
+<dw-sidefile>
+	<!-- title tag -->
+	<output>
+		<output-name>titletag</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>titletag</parameter-value>
+		</parameter>
+	</output>	
+	<!-- abstract tag -->
+	<output>
+		<output-name>abstract</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>abstract</parameter-value>
+		</parameter>
+	</output>
+	<!-- keywords tag -->
+	<output>
+		<output-name>keywords</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>keywords</parameter-value>
+		</parameter>
+	</output>	
+	<!-- dc.date meta tag -->
+	<output>	
+		<output-name>dcDate</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcDate</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.type meta tag -->
+	<output>
+		<output-name>dcType</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcType</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.subject meta tag -->
+	<output>	
+		<output-name>dcSubject</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcSubject</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.rights meta tag -->
+	<output>
+		<output-name>dcRights</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcRights</parameter-value>
+		</parameter>
+	</output>
+	<!-- ibm.effective meta tag -->
+	<output>
+		<output-name>ibmEffective</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>ibmEffective</parameter-value>
+		</parameter>
+	</output>
+	<!-- breadcrumb tags for the default (based on primary zone) and all other options, based on secondary zones.  app to check first for zone in the url and use that bct or, if no zone in incoming URL, then use default bct-  NOTE: included all zones (including ibm and none that are ww zones, but didn't include local-site only zones like grid and security. Did not include autonomic since it's going away -->
+	<!-- aix breadcrumb --> 
+	<output>
+		<output-name>aix_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>aix</parameter-value>
+			</parameter>
+	</output>
+	<!-- architecture breadcrumb --> 
+	<output>
+		<output-name>architecture_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>architecture</parameter-value>
+			</parameter>
+	</output>
+	<!-- 6.0 Maverick Phase 2 egd 02/23/08: added breadcrumb output for 'data' -->
+	<!-- data (info mgmt) breadcrumb --> 
+	<output>
+		<output-name>data_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>data</parameter-value>
+			</parameter>
+	</output>	
+	<!-- db2 (info mgmt) breadcrumb --> 
+	<output>
+		<output-name>db2_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>db2</parameter-value>
+			</parameter>
+	</output>
+	<!-- ibm (sample it projects) breadcrumb --> 
+	<output>
+		<output-name>ibm_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>ibm</parameter-value>
+			</parameter>
+	</output>
+	<!-- java breadcrumb --> 
+	<output>
+		<output-name>java_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>java</parameter-value>
+			</parameter>
+	</output>
+	<!-- linux breadcrumb -->
+	<output>
+		<output-name>linux_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>linux</parameter-value>
+			</parameter>
+	</output>
+	<!-- lotus breadcrumb --> 
+	<output>
+		<output-name>lotus_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>lotus</parameter-value>
+			</parameter>
+	</output>
+	<!-- opensource breadcrumb --> 
+	<output>
+		<output-name>opensource_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>opensource</parameter-value>
+			</parameter>
+	</output>
+	<!-- power (multicore acceleration) breadcrumb --> 
+	<output>
+		<output-name>power_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>power</parameter-value>
+			</parameter>
+	</output>
+	<!-- rational breadcrumb --> 
+	<output>
+		<output-name>rational_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>rational</parameter-value>
+			</parameter>
+	</output>
+	<!-- tivoli breadcrumb --> 
+	<output>
+		<output-name>tivoli_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>tivoli</parameter-value>
+			</parameter>
+	</output>
+	<!-- web (web development) breadcrumb --> 
+	<output>
+		<output-name>web_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>web</parameter-value>
+			</parameter>
+	</output>
+	<!-- webservices breadcrumb --> 
+	<output>
+	<output-name>webservices_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>webservices</parameter-value>
+			</parameter>
+	</output>
+	<!-- websphere breadcrumb --> 
+	<output>
+		<output-name>websphere_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>websphere</parameter-value>
+			</parameter>
+	</output>
+	<!-- xml breadcrumb --> 
+	<output>
+		<output-name>xml_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>xml</parameter-value>
+			</parameter>
+	</output>
+	<!-- none breadcrumb --> 
+	<output>
+		<output-name>none_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>none</parameter-value>
+			</parameter>
+	</output>
+	<!-- default breadcrumb --> 
+	<output>
+		<output-name>default_breadcrumb</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>breadcrumb</parameter-value>
+			</parameter>
+			<parameter>
+				<parameter-name>transform-zone</parameter-name>
+				<parameter-value>default</parameter-value>
+			</parameter>
+	</output>
+	<!-- page title -->
+	<output>
+		<output-name>title</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>title</parameter-value>
+		</parameter>
+	</output>
+	<!-- docbody -->
+	<output>
+		<output-name>docbody</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>docbody</parameter-value>
+		</parameter>
+	</output>
+</dw-sidefile>
+<!-- END_TRANSFORM_FOR_DW_SIDEFILE -->
+<!-- BEGIN_TRANSFORM_FOR_DW_DWTOP_HOME -->	
+   <dw-dwtop-home>  
+<!-- dc.date meta tag -->
+	<output>	
+		<output-name>dcDate</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcDate</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.type meta tag -->
+	<output>
+		<output-name>dcType</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcType</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.subject meta tag -->
+	<output>	
+		<output-name>dcSubject</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcSubject</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.rights meta tag -->
+	<output>
+		<output-name>dcRights</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcRights</parameter-value>
+		</parameter>
+	</output>
+	<!-- ibm.effective meta tag -->
+	<output>
+		<output-name>ibmEffective</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>ibmEffective</parameter-value>
+		</parameter>
+	</output>
+    	<!-- page title -->
+	<output>
+		<output-name>title</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>title</parameter-value>
+		</parameter>
+	</output>
+	<!-- featured content module -->
+	<output>
+		<output-name>feature</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>feature</parameter-value>
+		</parameter>
+	</output>
+	<!-- tabbed module (inline) -->
+	<output>
+		<output-name>tabbedModule</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>tabbedModule</parameter-value>
+		</parameter>
+	</output>
+	<!-- modules in the center column -->
+	<output>
+		<output-name>moduleDocbody</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>moduleDocbody</parameter-value>
+		</parameter>
+	</output>
+	<!-- spotlight (right column) -->
+	<output>
+		<output-name>spotlight</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>spotlight</parameter-value>
+		</parameter>
+	</output>
+	<!-- high visibility module (right column) -->
+	<output>
+		<output-name>highVisModule</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>highVisModule</parameter-value>
+		</parameter>
+	</output>
+</dw-dwtop-home>
+<!-- END_TRANSFORM_FOR_DW_DWTOP_HOME -->	
+<!-- BEGIN_TRANSFORM_FOR_DW_DWTOP_ZONEOVERVIEW -->
+ <dw-dwtop-zoneoverview>  
+<!-- title tag -->
+	<output>
+		<output-name>titletag</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>titletag</parameter-value>
+		</parameter>
+	</output>	
+	<output>
+	<!-- abstract and description meta tags -->
+	<output-name>abstract</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>abstract</parameter-value>
+		</parameter>
+	</output>	
+	<output>
+	<!-- keywords meta tag -->
+	<output-name>keywords</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>keywords</parameter-value>
+		</parameter>
+	</output>	
+	<!-- dc.date meta tag -->
+	<output>	
+		<output-name>dcDate</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcDate</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.type meta tag -->
+	<output>
+		<output-name>dcType</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcType</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.subject meta tag -->
+	<output>	
+		<output-name>dcSubject</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcSubject</parameter-value>
+		</parameter>
+	</output>
+	<!-- dc.rights meta tag -->
+	<output>
+		<output-name>dcRights</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>dcRights</parameter-value>
+		</parameter>
+	</output>
+	<!-- ibm.effective meta tag -->
+	<output>
+		<output-name>ibmEffective</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>ibmEffective</parameter-value>
+		</parameter>
+	</output>
+	<!-- breadcrumb removed because it is part of title template for this release  -->
+	<!-- page title -->
+	<output>
+		<output-name>title</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>title</parameter-value>
+		</parameter>
+	</output>
+	<!-- featured content module -->
+	<output>
+		<output-name>feature</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>feature</parameter-value>
+		</parameter>
+	</output>
+	<!-- tabbed module (inline) -->
+	<output>
+		<output-name>tabbedModule</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>tabbedModule</parameter-value>
+		</parameter>
+	</output>
+	<!-- main body of modules in the center column -->
+	<output>
+		<output-name>moduleDocbody</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>moduleDocbody</parameter-value>
+		</parameter>
+	</output>
+	<!-- START RIGHT COLUMN -->
+	<!-- brand image (right column)  -->
+	<output>
+		<output-name>brandImage</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>brandImage</parameter-value>
+		</parameter>
+	</output>
+    <!-- high Vis (right column)  -->
+	<output>
+		<output-name>highVisModule</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>highVisModule</parameter-value>
+		</parameter>
+	</output>
+    <!-- spotlight (right column)  -->
+	<output>
+		<output-name>spotlight</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>spotlight</parameter-value>
+		</parameter>
+	</output> 
+	
+	<!-- right docbody module (right column, includes ed picks, etc., and allows editors to position and/or add a module as needed) -->
+	<output>
+		<output-name>moduleRightDocbody</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>moduleRightDocbody</parameter-value>
+		</parameter>
+	</output>
+    <!-- main left zone nav -->
+	<output>
+		<output-name>zoneLeftNav</output-name>
+		<output-xsl>/web/server_root/en_us/xslt/maverick/6.0/en_US/dw-document-html-worldwide-6.0.xsl</output-xsl>
+		<parameter>
+				<parameter-name>template</parameter-name>
+				<parameter-value>zoneLeftNav</parameter-value>
+		</parameter>
+	</output>
+  </dw-dwtop-zoneoverview>
+<!-- END_TRANSFORM_FOR_DW_DWTOP_ZONEOVERVIEW -->
+</dw-content>

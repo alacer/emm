@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-6.0.xsd"/>
+	<xsd:element name="dw-landing-generic">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>Define a generic developerWorks landing page</title>
+				<desc>Contains a generic developerWorks landing page that can optionally have an anchor list.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="id"/>
+				<xsd:element ref="keywords"/>
+				<xsd:element ref="meta-dctype" minOccurs="0"/>
+				<xsd:element ref="meta-dcsubject" minOccurs="0"/>
+				<xsd:element ref="meta-last-updated" minOccurs="0"/>
+				<xsd:element ref="content-area-primary"/>
+				<xsd:element ref="content-area-secondary" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="content-area-subnav" minOccurs="0"/>
+				<xsd:element ref="content-area-subnav-sublevel" minOccurs="0"/>
+				<xsd:element ref="tactic-code-urltactic" minOccurs="0"/>
+				<xsd:element ref="web-feed-autodiscovery" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="left-nav-include"/>
+				<xsd:element ref="title"/>
+				<xsd:element ref="subtitle" minOccurs="0"/>
+				<!-- 6.0 xM FIXPACK 09 21 11 egd Added rich-media-source element -->
+				<xsd:element ref="rich-media-source" minOccurs="0"/>
+				<xsd:element ref="date-published"/>
+				<xsd:element ref="date-updated" minOccurs="0"/>
+				<xsd:element ref="date-translated" minOccurs="0"/>
+				<xsd:element ref="abstract"/>
+				<xsd:element ref="abstract-extended" minOccurs="0"/>
+				<xsd:element ref="featured-content-module" minOccurs="0"/>
+				<!-- 6.0 Maverick R2 10/02/09 jpp:  Returned module-tabbed to a single optional selection at the top of the landing page -->
+				<xsd:element ref="module-tabbed" minOccurs="0"/>
+				<!-- 6.0 Maverick R2 10/02/09 jpp:  Removed module-html as a module selection and added container-html as a module option.  xsd:choice was no longer required -->
+				<xsd:element ref="module" maxOccurs="unbounded"/>
+				<xsd:element ref="target-content-file" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- Right column -->
+				<xsd:element ref="brand-image" minOccurs="0"/>
+				<xsd:element ref="customized-logo" minOccurs="0"/>
+				<!-- WORKING with software to dynamically pull in the contact modules -->
+				<!-- 6.0 Maverick R2 09/24/09 jpp Added contact-module-include as a yes/no option -->
+				<xsd:element name="contact-module-include" type="yesno" default="no" minOccurs="0"/>
+				<!-- For high visibility, proposal is to allow module to be hardcoded within the file for special instances; must be maintained by editor.  We'll also do like article and pull one in dynamically by zone, based on what marketing team and brands want to highlight -->
+				<xsd:element ref="module-high-visibility" minOccurs="0" maxOccurs="3"/>
+				<xsd:element name="top-right-include" type="generic-right-box-include" minOccurs="0" maxOccurs="4"/>
+				<xsd:element ref="right-box" minOccurs="0" maxOccurs="4"/>
+				<xsd:element name="bottom-right-include" type="generic-right-box-include" minOccurs="0" maxOccurs="4"/>
+				<xsd:element ref="link-to-english" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="local-site" type="site" use="required"/>
+			<!-- 6.0 Maverick R2 09/24/09 jpp Restored content-space-navigation as an attribute -->
+			<xsd:attribute name="content-space-navigation" type="content-space-navigation-types" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

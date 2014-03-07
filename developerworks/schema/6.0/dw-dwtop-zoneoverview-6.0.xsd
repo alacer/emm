@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-6.0.xsd"/>
+	<xsd:element name="dw-dwtop-zoneoverview">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>Define developerWorks zone overview page (or zone overview page for local sites)</title>
+				<desc>Defines the elements for a developerWorks zone overview page for worldwide or local sites.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="id"/>
+				<xsd:element ref="title-tag"/>
+				<xsd:element ref="keywords"/>
+				<xsd:element ref="meta-dctype" minOccurs="0"/>
+				<xsd:element ref="meta-dcsubject" minOccurs="0"/>
+				<xsd:element ref="meta-last-updated" minOccurs="0"/>
+				<xsd:element ref="content-area-primary"/>
+				<xsd:element ref="title"/>
+				<xsd:element ref="subtitle" minOccurs="0"/>
+				<!-- 6.0 xM FIXPACK 09 21 11 egd Added rich-media-source element -->
+				<xsd:element ref="rich-media-source" minOccurs="0"/>
+				<xsd:element ref="date-published"/>
+				<xsd:element ref="date-updated" minOccurs="0"/>
+				<xsd:element ref="abstract"/>
+				<xsd:element ref="featured-content-module" minOccurs="0"/>
+				<xsd:element ref="module-tabbed" minOccurs="0"/>
+				<xsd:element ref="module" maxOccurs="unbounded"/>
+				<!-- Right column -->
+				<!-- High Visibility module -->
+				<xsd:element ref="module-high-visibility" minOccurs="0" maxOccurs="3"/>
+				<!-- Spotlight module -->
+				<xsd:element ref="module-spotlight" minOccurs="0"/>
+				<!-- Generic modules -->
+				<xsd:element ref="right-box" minOccurs="0" maxOccurs="4"/>
+			</xsd:sequence>
+			<xsd:attribute name="local-site" type="site" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

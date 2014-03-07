@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- developerWorks KNOWLEDGE PATH TEMPLATE V6.0
+       Last updated 2011-10-05 - jmh -->
+<!-- IMPORTANT!  DO NOT copy or cut and paste text from word processors such as 
+	 Microsoft Word. The encoding method they use (even if UTF-8) creates 
+	 invalid characters in the XML. Instead, save the Word document 
+	 as a text file and then copy the text.  -->
+			
+<!-- DW DOCUMENT - REQUIRED.  Do not edit -->
+<dw-document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../../dw-document-6.0.xsd"
+ xmlns:dw="http://www.ibm.com/developerWorks/">
+    <!-- DW-KNOWLEDGE-PATH - REQUIRED.  Notes:
+         1.  The skill level indicates the intended audience, where 1 is Introductory,  3 is Intermediate, and 5 is 
+             Advanced.
+         2.  Local site indicates which dW site this content is to be a part of. -->
+    <dw-knowledge-path skill-level="3" local-site="worldwide">
+        <!-- ID - REQUIRED.  The cma-id tends to be 6 digits.  Use 'original' to indicate if this is an original (yes) 
+	         or translated (no). -->
+        <id cma-id="" original="yes"/>
+        <!-- KEYWORDS - REQUIRED
+             Comma-separated keywords for the knowledge path.  For advice on effective keywords, see:
+             http://w3.tap.ibm.com/w3ki06/display/developerWorks/developerWorks%20title%20and%20meta%20tag%20guidelines -->
+        <keywords content="real-time java, knowledge path"/>
+        <!-- META-DCTYPE  - REQUIRED - DO NOT remove or alter this element.  -->
+        <meta-dctype>
+            <cma-defined-type/>
+        </meta-dctype>
+        <!-- META-DCSUBJECT  - REQUIRED - DO NOT remove or alter this element.  -->
+        <meta-dcsubject>
+            <cma-defined-subject/>
+        </meta-dcsubject>
+        <!-- META-LAST-UPDATED - OPTIONAL - THIS VALUE DOES NOT DISPLAY
+		 (initials = initials of person who updated the file) -->
+        <meta-last-updated day="04" month="10" year="2011" initials="jmh"/>
+        <!-- CONTENT-AREA-PRIMARY - REQUIRED -->
+        <content-area-primary name="java"/>
+        <!-- CONTENT-AREA-SECONDARY - OPTIONAL -->
+        <content-area-secondary name="opensource"/>
+        <!-- No SERIES element yet -->
+        <!-- KNOWLEDGE PATH TITLE - REQUIRED
+             Short, keyword-rich title.  Along with the optional series title, it is used to create the
+             title element, which plays an important part in most search engine ranking algorithms.
+             Try to use short, active verbs in your title.  -->
+        <title>Develop with real-time Java</title>
+        <!-- KNOWLEDGE PATH SUBTITLE - OPTIONAL  (but recommended). -->
+         <subtitle>Create applications with predictable response times</subtitle>
+        <!-- RSS IMAGE URL - OPTIONAL
+            For editors: The generic image below will display as the accompanying 
+            lead image for knowledge paths in the dW iPad application. If 
+            you have another image that specifically represents this content,
+            such as the feature image, you may use that instead.  
+            NOTE: Must be a fully qualified URL as shown. Use the http protocol.   -->
+        <rss-image-url>http://www.ibm.com/developerworks/i/t-j-f-immutable_ebf7fb.jpg</rss-image-url>
+        <!-- RICH MEDIA SOURCE - OPTIONAL
+            If this content contains inline audios or videos, use the audio and video 
+            elements within the rich-media-source element to enter the URL for each audio  
+            and video file.  Enter the transcript URL for each audio and video. If the video has only 
+            closed captions instead of a separate transcript, leave the <video-transcript-url> tag 
+            blank.  Be sure to follow these standards for video:
+            http://w3.tap.ibm.com/w3ki02/display/dwcontent/Rich+media+in+articles+and+landing+pages 
+            VERY IMPORTANT NOTES:
+            (1)  These audios and videos will be candidates for dynamic rendering within video 
+            and audio players for V17 (Defiant redesign).
+            (2)  Do not include videos or audios that are in "Related resources" and are not part 
+            of your main content.  Also don't include:
+            (a) Author short videos that don't have transcripts.
+            (b) Demos that already have a demo summary page. 
+            (c) dW audios and videos (weekly shows and interviews by Scott Laningham).  
+            (For (b) and (c), the landing page or blog (weekly shows and interviews) or the demo 
+            summary page that goes with that rich media will include a rich-media-source
+            element for those audio and video URLs.) --> 
+        <!-- <rich-media-source>
+            <audio>
+                <audio-url>http://www.ibm.com/developerworks/podcasts/twodw/twodw-091411.mp3</audio-url>
+                <audio-transcript-url>http://www.ibm.com/developerworks/podcast/dwi/feature050411-champion.html</audio-transcript-url>
+            </audio>
+            <video> -->
+                <!-- If the video is on YouTube, the video URL should be in the format of this 
+                    example: http://www.youtube.com/watch?v=Fcwz4MBIs5U -->
+                <!-- <video-url>http://www.youtube.com/watch?v=Fcwz4MBIs5U</video-url>
+                <video-transcript-url>http://www.ibm.com/developerworks/podcast/dwi/feature050411-champion.html</video-transcript-url>
+            </video> 
+        </rich-media-source> -->
+        <!-- KP-DISCUSS-URL - OPTIONAL
+        If this KP has an associated forum, enter the fully-qualified URL of the forum here.  -->
+        <!-- <kp-discuss-url>http://www.ibm.com/developerworks/forums/forum.jspa?forumID=747&amp;cat=72</kp-discuss-url>
+            -->
+        <!-- DATE-PUBLISHED - REQUIRED -->
+        <date-published day="02" month="01" year="2011"/>
+        <!-- DATE-UPDATED - REQUIRED IF this is a major update of content -->
+        <date-updated day="21" month="05" year="2011"/>
+        <!-- DATE-TRANSLATED - OPTIONAL for local sites; indicates the date that this content was translated -->
+        <!--<date-translated day="21" month="06" year="2011"/>-->
+        <!-- ABSTRACT - REQUIRED
+            DO NOT include HTML tagging, or special characters 
+            in the abstract. The abstract should be enticing yet succinct. 
+            Aim for 3 to 5 sentences that express why the reader would care 
+            about the content (motive) and what he or she can gain from reading 
+            the content (benefits). The abstract is used for the META 
+            abstract tag, and in some search results and in the knowledge path itself, if 
+            you don't provide an abstract-extended element. -->
+        <abstract>Real-time applications -- applications that must respond in a highly predictable
+            time frame -- are essential in financial services, telecommunications, manufacturing, defense, and other industries. 
+            This knowledge path is designed for experienced developers who need to build Java solutions that meet real-time requirements. 
+            Learn about the real-time Java extensions to the Java platform and how to exploit them via IBM WebSphere Real Time, a 
+            standards-compliant Java runtime and SDK. </abstract>
+        <!-- ABSTRACT-EXTENDED
+            If you need HTML tagging or special characters in the abstract, fill 
+            in the abstract-extended IN ADDITION to the abstract. When both are filled 
+            in, the abstract is used for the META abstract tag, and in some search 
+            results, while the abstract-extended appears in the knowledge path itself. -->
+        <abstract-extended>Real-time applications <mdash/> applications that must respond
+            in a highly predictable time frame <mdash/> are essential in financial
+            services, telecommunications, manufacturing, defense, and other industries.
+            This knowledge path is designed for experienced developers who need to build
+            Java solutions that meet real-time requirements. Learn about the real-time
+            Java extensions to the Java platform and how to exploit them via IBM WebSphere
+            Real Time, a standards-compliant Java runtime and SDK. </abstract-extended>
+        <!-- KP-STEPS - REQUIRED.  Container for all steps in the knowledge path -->
+        <kp-steps>
+            <!-- KP-STEP - REQUIRED.  Code one kp-step block for each step in your knowledge path. -->
+            <kp-step>
+                <!-- HEADING - REQUIRED.  The type must be "kp-step". -->
+                <heading type="kp-step" refname="">Why real-time Java?</heading>
+                <!-- KP-STEP-ABSTRACT - REQUIRED.  Like <abstract-extended>, can contain sub-elements. -->
+                <kp-step-abstract>Runtime processes (garbage collection, class loading,
+                    Just-in-time compilation, and thread scheduling) in conventional Java
+                    virtual machines (JVMs) make them incapable of running applications
+                    with real-time behavior. Real-time extensions to Java technology-based
+                    on the Real-time Specification for Java (RTSJ) <mdash/> enable JVMs
+                    with real-time features. You can meet the hard or soft real-time
+                    constraints your applications require by leveraging the traditional
+                    benefits of the Java language <mdash/> such as interoperability and
+                    safety <mdash/> and combining them with features that the real-time
+                    Java extensions enable. Learn how.</kp-step-abstract>
+                <!-- KP-RESOURCES - REQUIRED.  Container for all resources in the step.
+                      For editors: Any rich-media resources you link to should meet IBM
+                      accessibility requirements. For rich-media resources on developerWorks, 
+                      link to a summary page, landing page, or permalink that embeds or links 
+                      to the audio, video, or demo content (see first "Watch" link below for an example).  
+                      Any YouTube videos you link to should include a closed caption file or transcript 
+                      (see second "Watch" link below for an example).
+                -->
+                <kp-resources>
+                    <!-- KP-RESOURCE - REQUIRED.  Notes:
+                         1.  kp-resource-id:  Leave blank when creating a new knowledge path.
+                             When you publish the knowledge path, CMA fills this in with the correct CMA ID 
+                             based on the kp-resource-url value.
+		     2.  kp-resource-type: Controls the icon and initial word displayed for the resource;
+		         valid values are: Download, Listen, Practice, Read, and Watch.
+		     3.  kp-resource-registration:
+		          0 = no registration required to view the resource						  
+			1 = dW registration is required to view the resource 
+                              2 = non-dW registration is required to view the resource. -->
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <!-- KP-RESOURCE-TITLE - REQUIRED.  -->
+                        <kp-resource-title>Toward Deterministic Java
+                            Performance</kp-resource-title>
+                        <!-- KP-RESOURCE-URL - REQUIRED.  Notes:  
+                             1. All URLs must be absolute and include the protocol
+                             2. Code any ampersands as '&amp;', not  '&'.
+                             3. Notes for developerWorks editors on the eld attribute value:
+                                 a. For content in CMA, use eld="no" and test the URL on borg or CMA preview.
+                                     Do not include the alias portion of links to technology zone content.
+                                 b. For content not in CMA, use eld="yes" and create an ELD for the resource.
+                                     Refer to the following wiki page for instructions on creating an ELD:
+                                     http://w3.tap.ibm.com/w3ki02/display/dwcontent/How+to+publish+knowledge+paths#Howtopublishknowledgepaths-eld                        
+                        -->
+                        <kp-resource-url eld="yes">http://www.slidefinder.net/t/toward_deterministic_java_performance_mark/9528000</kp-resource-url>
+                        <!-- KP-RESOURCE-NOTE - OPTIONAL. Notes:
+                             1.  This is additional information that will appear immediately after the link for the resource.
+                             2.  REQUIRED for links to video or audio to specify the duration (e.g., 35 minutes)
+                             3.  REQUIRED for links to downloads to specify the file size (e.g., 50KB)
+                             4.  RECOMMENDED for links to trial software (e.g., 90-day trial)
+                             5.  Otherwise, avoid. If you must use one, limit to 3 words or fewer. 
+                             6.  Do not include parentheses with the note text; they are added automatically.   -->
+                        <kp-resource-note></kp-resource-note>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Exploit real-time Java's unique
+                            features</kp-resource-title>
+                        <kp-resource-url eld="no">http://www.ibm.com/developerworks/library/j-devrtj1/index.html</kp-resource-url>
+                        <kp-resource-note></kp-resource-note>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Watch"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Trent Gray-Donald on IBM SDK Java Technology Edition V7</kp-resource-title>
+                        <kp-resource-url eld="yes">https://www.ibm.com/developerworks/mydeveloperworks/blogs/scott/entry/trent_gray_donald_on_ibm_sdk_java_technology_edition_v715</kp-resource-url>
+                        <kp-resource-note>9:49</kp-resource-note>
+                    </kp-resource>
+                </kp-resources>
+            </kp-step>
+            <kp-step>
+                <heading type="kp-step" refname="">Building portable real-time
+                    applications</heading>
+                <kp-step-abstract>Standard Java applications can run without modification
+                    in a real-time JVM to achieve real-time goals. The Metronome garbage
+                    collector and Ahead-of-time (AOT) compilation—two key features in IBM
+                    WebSphere Real Time—let your real-time applications retain the
+                    benefits of Java portability. Understand how these features help turn
+                    any Java application into a real-time application.</kp-step-abstract>
+                <kp-resources>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Real-time garbage
+                            collection</kp-resource-title>
+                        <kp-resource-url eld="no">http://www.ibm.com/developerworks/library/j-rtj4/index.html</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Comparing compilation
+                            techniques</kp-resource-title>
+                        <kp-resource-url eld="no">http://www.ibm.com/developerworks/library/j-rtj2/index.html</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                </kp-resources>
+            </kp-step>
+            <kp-step>
+                <heading type="kp-step" refname="">Targeting applications for real-time
+                    Linux</heading>
+                <kp-step-abstract>A real-time JVM can take advantage of real-time
+                    operating system (RTOS) services to help applications meet stringent
+                    real-time requirements. Real-time classes and APIs in the
+                    javax.realtime package extend and tighten threading and
+                    synchronization capabilities for the Java programmer. See how these
+                    capabilities in WebSphere Real Time take advantage of the real-time
+                    version of the Linux kernel.</kp-step-abstract>
+                <kp-resources>
+                    <kp-resource kp-resource-id="" kp-resource-type="Watch"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Real-Time Linux and Java</kp-resource-title>
+                        <kp-resource-url eld="yes">http://www.youtube.com/watch?v=AKfmBMTx0gM</kp-resource-url>
+                        <kp-resource-note>4:25</kp-resource-note>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Implementing Real Time Solutions with Linux and
+                            IBM</kp-resource-title>
+                        <kp-resource-url
+                            eld="yes">http://www.ibm.com/linux/pdf/Real-Time_Solutions_from_IBM-2009.pdf</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Creating predictable-performance Java
+                            applications in real time</kp-resource-title>
+                        <kp-resource-url eld="yes">ftp://public.dhe.ibm.com/software/webservers/realtime/pdfs/WebSphere_Real_Time_Technical_Overview.pdf</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Threading and
+                            synchronization</kp-resource-title>
+                        <kp-resource-url eld="no">http://www.ibm.com/developerworks/library/j-rtj3/index.html</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                </kp-resources>
+            </kp-step>
+            <kp-step>
+                <heading type="kp-step" refname="">Techniques for developing real-time
+                    applications</heading>
+                <kp-step-abstract>Write and deploy real-time Java applications using the
+                    tools provided with WebSphere Real Time, and use an Eclipse-based
+                    visualization tool to validate that they achieve deterministic quality
+                    of service.</kp-step-abstract>
+                <kp-resources>
+                    <kp-resource kp-resource-id="" kp-resource-type="Download"
+                        kp-resource-registration="2">
+                        <kp-resource-title>WebSphere Real Time evaluation
+                            version</kp-resource-title>
+                        <kp-resource-url eld="yes">http://www14.software.ibm.com/webapp/iwm/web/preLogin.do?source=swg-wsrt</kp-resource-url>
+                        <kp-resource-note>220KB</kp-resource-note>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Practice"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Write, validate, and analyze a real-time Java
+                            application</kp-resource-title>
+                        <kp-resource-url eld="no">http://www.ibm.com/developerworks/library/j-rtjdev3/index.html</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Writing and deploying real-time Java
+                            applications: Examples, hints, and tips</kp-resource-title>
+                        <kp-resource-url eld="no">http://www.ibm.com/developerworks/library/j-rtj5/index.html</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>JavaOne 2010 presentation on eliminating
+                            pauses</kp-resource-title>
+                        <kp-resource-url eld="yes">http://public.dhe.ibm.com/software/dw/java/j-EliminatingPauses.pdf</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                    <kp-resource kp-resource-id="" kp-resource-type="Read"
+                        kp-resource-registration="0">
+                        <kp-resource-title>Simplifying real-time Java
+                            development</kp-resource-title>
+                        <kp-resource-url eld="no">http://www.ibm.com/developerworks/library/j-rtj6/index.html</kp-resource-url>
+                        <kp-resource-note/>
+                    </kp-resource>
+                </kp-resources>
+            </kp-step>
+        </kp-steps>
+        <!-- KP-RELATED-RESOURCES - REQUIRED.  Intended to be links to library views of multiple
+             dW content items that directly support this knowledge path.  Can also be links 
+             to individual items, including non-dW content that directly support this knowledge path.  For example, 
+             if this knowledge path includes items that are part of a series, include a link to a view of all the items in 
+             that series. -->
+        <kp-related-resources>
+            <!-- KP-RELATED-RESOURCE - REQUIRED.  Code one kp-related-resource block for each resource.
+		         In order to display the correct icon, code kp-related-resource-type as follows:
+                   1.  Use 'discuss' for forums or wikis.
+                   2.  Use 'other' for everything else.  
+                   3.  Limit yourself to 6 related resources. -->
+            <kp-related-resource kp-related-resource-type="other">
+                <!-- KP-RELATED-RESOURCE-TITLE - REQUIRED. -->
+                <kp-related-resource-title>Using Java code to program real-time
+                    systems</kp-related-resource-title>
+                <!-- KP-RELATED-RESOURCE-URL - REQUIRED.  
+                     Note: Code any ampersands as '&amp;', not  '&'.  -->
+                <kp-related-resource-url>http://www.ibm.com/developerworks/java/library/j-rtj1/index.html</kp-related-resource-url>
+            </kp-related-resource>
+            <kp-related-resource kp-related-resource-type="other">
+                <kp-related-resource-title>Improve service
+                    quality</kp-related-resource-title>
+                <kp-related-resource-url>http://www.ibm.com/developerworks/library/?sort_by=&amp;show_abstract=true&amp;show_all=&amp;search_flag=&amp;contentarea_by=All+Zones&amp;search_by=&amp;product_by=-1&amp;topic_by=-1&amp;industry_by=-1&amp;type_by=Knowledge+paths&amp;ibm-search=Search</kp-related-resource-url>
+            </kp-related-resource>
+            <kp-related-resource kp-related-resource-type="other">
+                <kp-related-resource-title>Java technology, IBM
+                    style</kp-related-resource-title>
+                <kp-related-resource-url>http://www.ibm.com/developerworks/views/java/libraryview.jsp?search_by=java+technology+ibm+style</kp-related-resource-url>
+            </kp-related-resource>
+            <kp-related-resource kp-related-resource-type="other">
+                <kp-related-resource-title>Anatomy of real-time Linux
+                    architectures</kp-related-resource-title>
+                <kp-related-resource-url>http://www.ibm.com/developerworks/linux/library/l-real-time-linux/</kp-related-resource-url>
+            </kp-related-resource>                  
+        </kp-related-resources>
+        <!-- KP-NEXT-STEPS - REQUIRED.  Links for further study (beyond the scope of this knowledge path). -->
+        <kp-next-steps>
+            <!-- KP-NEXT-STEP - REQUIRED.  Code one kp-next-step block for each next step in your knowledge path.
+                   Use kp-next-step-type to indicate the type of next step and control the
+                   icon used for the link; valid values are: Read, Listen, Watch,
+                   Download, Practice, Discuss, Enroll, Register, Follow, Join, and Buy.  -->
+            <kp-next-step kp-next-step-type="Discuss">
+              <kp-next-step-title>IBM TuningFork Visualization Tool for Real-Time Systems forum</kp-next-step-title>
+                <kp-next-step-url>http://www.ibm.com/developerworks/forums/forum.jspa?forumID=999</kp-next-step-url>
+            </kp-next-step>
+            <kp-next-step kp-next-step-type="Read">
+                <kp-next-step-title>WebSphere Real Time wiki</kp-next-step-title>
+                <kp-next-step-url>http://www.ibm.com/developerworks/wikis/display/woolf/WebSphere+Real+Time</kp-next-step-url>
+            </kp-next-step>
+            <kp-next-step kp-next-step-type="Register">
+                <kp-next-step-title>No Fluff Just Stuff Java Symposium</kp-next-step-title>
+                <kp-next-step-url>http://www.nofluffjuststuff.com/</kp-next-step-url>
+            </kp-next-step>   
+            <kp-next-step kp-next-step-type="Join">
+                <kp-next-step-title>Java Technology Community</kp-next-step-title>
+                <kp-next-step-url>https://www.ibm.com/developerworks/mydeveloperworks/groups/service/html/communityview?communityUuid=738b7897-cd38-4f24-9f05-48dd69116837</kp-next-step-url>
+            </kp-next-step>
+            <kp-next-step kp-next-step-type="Follow">
+                <kp-next-step-title>IBM on troubleshooting Java applications blog</kp-next-step-title>
+                <kp-next-step-url>https://www.ibm.com/developerworks/mydeveloperworks/blogs/troubleshootingjava/?lang=en_us</kp-next-step-url>
+            </kp-next-step>
+            <kp-next-step kp-next-step-type="Read">                    
+                <kp-next-step-title>Other developerWorks knowledge paths</kp-next-step-title>                    
+               <kp-next-step-url>http://www.ibm.com/developerworks/library/?sort_by=&amp;type_by=Knowledge+paths</kp-next-step-url>
+            </kp-next-step>
+        </kp-next-steps>
+    </dw-knowledge-path>
+</dw-document>

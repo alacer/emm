@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-6.0.xsd"/>
+	<xsd:element name="dw-sidefile">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>Define a sidefile associated with a dW article</title>
+				<desc>Contains a sidefile for a developerWorks article.  This is typically rendered as a sidefile within an article. </desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="id" minOccurs="0"/>
+				<xsd:element ref="keywords"/>
+				<xsd:element ref="meta-dctype" minOccurs="0"/>
+				<xsd:element ref="meta-dcsubject" minOccurs="0"/>
+				<xsd:element ref="meta-last-updated" minOccurs="0"/>
+				<xsd:element ref="content-area-primary"/>
+				<xsd:element ref="content-area-secondary" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="series" minOccurs="0"/>
+				<xsd:element ref="title"/>
+				<xsd:element ref="subtitle" minOccurs="0"/>
+				<!-- 6.0 xM FIXPACK 09 21 11 egd Added rich-media-source element -->
+				<xsd:element ref="rich-media-source" minOccurs="0"/>
+				<xsd:element ref="date-published"/>
+				<xsd:element ref="date-updated" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="forum-url" minOccurs="0"/>
+				<xsd:element ref="docbody"/>
+				<xsd:element ref="attribution" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="local-site" type="site" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

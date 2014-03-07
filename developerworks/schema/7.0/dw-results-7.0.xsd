@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dw="http://www.ibm.com/developerWorks/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:include schemaLocation="dw-common-7.0.xsd"/>
+	<xsd:element name="dw-results">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				<title>developerWorks worldwide or local site results page</title>
+				<desc>Defines the elements for developerWorks worldwide or local site results pages.</desc>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="id"/>
+				<xsd:element ref="keywords"/>				
+				<!-- Removed meta-dctype and meta-dcsubject for v7.0 -->
+				<!-- <xsd:element ref="meta-dctype" minOccurs="0"/> -->
+				<!-- <xsd:element ref="meta-dcsubject" minOccurs="0"/> -->				
+				<xsd:element ref="meta-last-updated" minOccurs="0"/>
+				<xsd:element ref="content-area-primary"/>
+				<!-- Also required for CMA use -->
+				<xsd:element ref="title"/>
+				<xsd:element ref="date-published"/>
+				<xsd:element ref="date-updated" minOccurs="0"/>
+				<xsd:element ref="abstract"/>
+				<!-- Project Defiant jpp 10/31/11: Removed leadspace-module element -->
+				<!-- Interior columns -->	
+				<xsd:element ref="module" maxOccurs="1"/>
+			</xsd:sequence>
+			<xsd:attribute name="layout" type="layout-types" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
