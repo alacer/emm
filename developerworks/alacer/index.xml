@@ -352,10 +352,10 @@ back-to-top attribute, set to "no" as shown below.
 Note: Be sure all refnames you use in your article are unique. -->
             <heading alttoc="" refname="" type="major">Introduction</heading>
             <p>
-            	Extensible Markov Model (EMM): A simple Markov model combined with stream clustering. The EMM is able to change over time by both adding new states as they are encountered and fading or trimming existing states over time. This allows the model to adapt to changes in the simulated system. This could be very useful in the context of modelling traffic on a web site using web server using log files. The web site is likely to exhibit dynamic usage patterns as well as structural changes over time. Thus, a model that can account for these temporal changes in state and usage would seemingly be advantagous. The EMM promises this possibility.
+            	The Extensible Markov Model (EMM), first introduced in <a href="#resources">2004 by Dunham, Meng, and Huang</a>, combines a stream clustering algorithm with a Markov chain. The states of the Markov chain are clusters defined by the stream clustering algorithm. The transition probabilities between states define a temporal component of the model. An important aspect of the EMM is that it is able to train continuously. That is the model can train and predict in a single pass of the data. The EMM is able to change over time by both adding new states as they are encountered and fading or trimming existing states over time. This allows the model to adapt to changes in the simulated system. This could be very useful in the context of modeling traffic on a web site using web server using log files. The web site is likely to exhibit dynamic usage patterns as well as structural changes over time. Thus, a model that can account for these temporal changes in state and usage would seemingly be advantageous. 
             </p>
             <p>
-            	In this paper we demonstrate the use of an EMM in modelling and predicting user requests for content on a web site. We use server logs to both train and test the model. The solution is implemented using IBM Infosphere Streams and R. The application framework is provided by Streams and R is used modelling and prediction.
+            	In this paper we demonstrate the use of an EMM in modeling and predicting user requests for content on a web site. We use server logs to both train and test the model. The solution is implemented using IBM InfoSphere Streams and R. The application framework is provided by Streams and R is used modeling and prediction.
             </p>
             <!-- MINOR HEADING. For authors: minor headings organize major 
 sections into smaller units, and do not appear in the table of contents. 
@@ -370,7 +370,7 @@ leave refname blank. -->
             <p>The EMM model has been used to in traffic analysis, more examples ... In this work, we demonstrate the use of an EMM in predicting user requests for content on a website. </p>
             <heading alttoc="" refname="" type="minor">Web Server Logs</heading>
             <p> 
-            	Web servers maintain a log of page requests. Among the items recorded for each request, the server logs the IP address of the requester, the time stamp of the request, and a path to the requested item. <a href="#table1">Table 1</a> below shows three example entries from a web server log. All three entries are from the same IP address for three separate items (two images and an HTML document). Note that server logs typically include two additional columns: a referer URL and user agent. These three entries could represent a visit (or part thereof) to a web site. 
+            	Web servers maintain a log of page requests. Among the items recorded for each request, the server logs the IP address of the requester, the time stamp of the request, and a path to the requested item. <a href="#table1">Table 1</a> below shows three example entries from a web server log. All three entries are from the same IP address for three separate items (two images and an HTML document). Note that server logs typically include two additional columns: a referrer URL and user agent. These three entries could represent a visit (or part thereof) to a web site. 
             </p>
 
             <heading refname="table1" type="table">Example entries in a web server log</heading>
@@ -378,7 +378,7 @@ leave refname blank. -->
                 summary="Example entries in a web server log">
                 <tr>
                     <th scope="col">IP Address</th>
-                    <th scope="col">Username etc</th>
+                    <th scope="col">User name etc</th>
 					<th scope="col">Time stamp</th>
                     <th scope="col">Access Request</th>
                     <th scope="col">Result Status Code</th>
@@ -436,10 +436,10 @@ leave refname blank. -->
 
             <heading alttoc="" refname="" type="major">Details of the Solution</heading>
             <p>
-            	For this project, we were interested in modelling a web site using a server log file. For our relatively simple model, each requested content item is a state or cluster in the EMM. The transition probabilities are determined by observing the number of people who request page i after requesting page j. In addition to modelling each content item, we also include a state that represents off-site. That is the state prior to a user requesting any content from the web server.
+            	For this project, we were interested in modeling a web site using a server log file. For our relatively simple model, each requested content item is a state or cluster in the EMM. The transition probabilities are determined by observing the number of people who request page i after requesting page j. In addition to modeling each content item, we also include a state that represents off-site. That is the state prior to a user requesting any content from the web server.
             </p>
             <p>
-				Code listing 1 below is the main SPL code for our application. The application is composed of five operators. The FileSource operator reads the input server log one line at time and returns it as a tuple with one item. Each line is parsed using an RScript operator that calls an R script. The R script parses out the IP address of the requester and the requested item. This script also analyzes the log entry to determine if it is relevant (per the conditions previously mentioned). The next operator in the pipe is a Filter that will filter any tuples tagged for filtration by the R parsing routine. Tuples that are not filtered are passed to the second RScript operator which passes the path of the requested item to an R script that uses the path to produce a prediction consisting of a list of the twenty most likely content items to be requested next. The resulting prediction is packaged up in a tuple along with the requesting IP address and the requested content item. The final operator—a FileSink operator—writes incoming tuples to an output file.
+				<a href="#listing1">Code listing 1</a> below is the main SPL code for our application. The application is composed of five operators. The FileSource operator reads the input server log one line at time and returns it as a tuple with one item. Each line is parsed using an RScript operator that calls an R script. The R script parses out the IP address of the requester and the requested item. This script also analyzes the log entry to determine if it is relevant (per the conditions previously mentioned). The next operator in the pipe is a Filter that will filter any tuples tagged for filtration by the R parsing routine. Tuples that are not filtered are passed to the second RScript operator which passes the path of the requested item to an R script that uses the path to produce a prediction consisting of a list of the twenty most likely content items to be requested next. The resulting prediction is packaged up in a tuple along with the requesting IP address and the requested content item. The final operator, a FileSink operator, writes incoming tuples to an output file.
 
             </p>
 <code type="section" width="100%">
@@ -494,6 +494,10 @@ composite Main {
     }
 }
 </code>
+
+<p>
+    <a href="listing2">Code listing 2</a> below contains the R functions used in parsing log entries. Note, the application maintains a list of known bot IP addresses. This list is used to label entries associated with bots for filtration. In addition, the script identifies requests for items other than HTML, PDF, or PS documents and marks the returned tuple for filtration.
+</p>
 
 <code type="section" width="100%">
 <heading refname="listing2" type="code">R functions used in parsing log entries.</heading>
@@ -561,6 +565,10 @@ get.tuple &lt;- function(log.entry) {
 }
 </code>
 
+<p>
+    <a href="#listing3">Code Listing 3<a> contains the R script called to parse log entries. This script utilizes the functions in <a href="listing2">Code listing 2</a>.
+</p>
+
 <code type="section" width="100%">
 <heading refname="listing3" type="code">R script called to parse a log entry tuple.</heading>
 # This script parses log entries transforming them into tuples
@@ -581,7 +589,7 @@ origin &lt;- tuple[1]
 path &lt;- tuple[2]
 </code>
 
-<code type="section" width="100%">
+<!-- <code type="section" width="100%">
 <heading refname="listing4" type="code">R script for initializing the EMM model.</heading>
 # Load required libraries
 library(rEMM)
@@ -598,25 +606,31 @@ load(file="../data/page-hash.RData")
 # Load the pages list
 stopifnot(file.exists("../data/page-list.RData"))
 load(file="../data/page-list.RData")
-</code>
+</code> -->
+
+<p>
+    We use a trained EMM to predict the next most likely page request. In this case, each state in the EMM represents a page on the site (e.g. an HTML, PDF, or PS document). To predict the next likely requested item, we look up the state associated with the current page. We then use the predict method of the EMM to return a list of the probabilities of transitioning from the current state to all other observed states. To obtain the top twenty most likely, we simply sort the list in descending order and retrieve the states with highest probabilities. Lastly, we convert the predicted states into the corresponding paths.
+</p>
 
 <code type="section" width="100%">
 <heading refname="listing5" type="code">R script for making predictions using the EMM.</heading>
-# inputs:  path -- The path of the last reqested item.
+# inputs:  path -- The path of the last requested item.
 # outputs: prediction -- A list of the twenty most likely next paths to be 
-#                        reqested.
+#                        requested.
 
 prediction &lt;- vector()
 last.request &lt;- page.hash[[path]]
 if (! is.null(last.request)) {
-  liklihoods &lt;- predict(emm, current_state=last.request, 
+  likelihoods &lt;- predict(emm, current_state=last.request, 
                            probabilities=TRUE)
-  top.twenty &lt;- names(sort(x=liklihoods, decreasing=TRUE)[1:20])
+  top.twenty &lt;- names(sort(x=likelihoods, decreasing=TRUE)[1:20])
   for (i in 1:20) {
     prediction[[i]] &lt;- toString(page.list[as.numeric(top.twenty[i])])
   } 
 }
 </code>
+
+
             <!-- <heading alttoc="" refname="code-hd" type="major">Code listings</heading>
             <p><a name="code-text">Code listings</a> are common in developerWorks content.
                 Limit code lines to no more than 90 characters. See the scale in <xref
@@ -765,14 +779,14 @@ the list item, like this:
 </ol>   
 For additional advice, see "Illustrating your article or tutorial for developerWorks" 
 at: http://www.ibm.com/developerworks/library/i-dwgraphics/ -->
-            <figure>
-                <heading refname="fig1" type="figure" alttoc="">Process for turning log entries into training data for the First Order Markov Model</heading>
+            <!-- <figure>
+                <heading refname="fig1" type="figure" alttoc="">Process for turning log entries into training data for the First Order Markov Model</heading> -->
                 <!-- ***  Example shows a properly coded alt attribute *** -->
-                <img src="data-flow.png" width="580" height="250"
+               <!--  <img src="data-flow.png" width="580" height="250"
                     alt=""
                 />
-            </figure>
-            <heading refname="links" type="major">Links and cross references</heading>
+            </figure> -->
+            <!-- <heading refname="links" type="major">Links and cross references</heading> -->
             <!-- LINKING TO OTHER SECTIONS OF THE ARTICLE  
 For authors: As needed, link to other headings, figures, code listings, 
 tables, or text as shown here.  Note that all link names in the
@@ -800,7 +814,7 @@ document must be distinct.
      - To link to stand-alone text, use <a href="#xxx">, where "xxx" is an anchor 
 	at the target text (as in <a name="xxx">target text</a>).
 -->
-            <p>To keep readers engaged with your content, and not wandering away
+            <!-- <p>To keep readers engaged with your content, and not wandering away
                 mid-article to pursue some other author's content, try to <strong>minimize
                     off-site links</strong> in the body of your article. Instead, in the
                 body, link to the <a href="#resources">Resources</a> heading and include
@@ -808,17 +822,17 @@ document must be distinct.
                 technical briefings, Webcasts, demos, books, Web sites, or offers) and
                 urls there. Likewise, for code downloads and demos, don't include the urls
                 in the body; rather, link to the <a href="#download">Downloads</a> section
-                and include the urls there.</p>
-            <p>On the other hand, <strong>link freely to elements within the
+                and include the urls there.</p> -->
+            <!-- <p>On the other hand, <strong>link freely to elements within the
                     article</strong>, such as headings, figures, code listings, and
                 tables, <strong>and to other developerWorks content</strong>, especially
                 if the article is part of a series. For serial content, include at least
                 one link to the entire series in the body of the article. (In addition,
                 include a link to the entire series in the abstract and Resources
-                section.)</p>
-            <p>To sum up, you can include these types of links in the body of your
-                article:</p>
-            <ul>
+                section.)</p> -->
+            <!-- <p>To sum up, you can include these types of links in the body of your
+                article:</p> -->
+            <!-- <ul>
                 <li>
                     <strong>Link to "Resources"</strong>: See the <a href="#resources"
                         >Resources</a> section for a link. <br/><br/>
@@ -841,16 +855,16 @@ document must be distinct.
                 <li>
                     <strong>Link to text</strong>: Find more detail about the <a
                         href="#code-text">maximum width of code listings</a>. </li>
-            </ul>
+            </ul> -->
             
-            <heading refname="includes" type="major">Include content from another file</heading>
-            <!-- INCLUDING CONTENT FROM ANOTHER FILE  
+           <!--  <heading refname="includes" type="major">Include content from another file</heading>
+            INCLUDING CONTENT FROM ANOTHER FILE  
                 For EDITORS: If you need to embed content in this article from another file (for example, a table used in an article series that
                 is common to all articles in that series and that will be updated as the series progresses), use the include element 
                 shown below.  The associated include will be displayed when the article is previewed in the production environment.
-                The relative-url attribute specifies the location of the include in the production environment. -->
+                The relative-url attribute specifies the location of the include in the production environment.
             <p>Editors may use the include element to include content from another file.</p>
-            <include relative-url="/developerworks/inc/sample-developerworks-article-include.inc"/>
+            <include relative-url="/developerworks/inc/sample-developerworks-article-include.inc"/> -->
             
             <!-- END OF ARTICLE BODY
 For developerWorks staff use only. -->
@@ -879,52 +893,54 @@ you coded the <forum-url> element (this link will be added automatically).
    -->
         <resources>
             <resource resource-category="Learn">
-            	M. Hahsler and M. H. Dunham, “rEMM: Extensible Markov Model for Data Stream Clustering in R,” Journal of Statistical Software, vol. 35, no. 5, pp. 1–31, 2010.
-            	<a href="http://www.jstatsoft.org/v35/i05/paper"></a>
+            	<a href="http://www.jstatsoft.org/v35/i05/paper">
+                    M. Hahsler and M. H. Dunham, “rEMM: Extensible Markov Model for Data Stream Clustering in R,” Journal of Statistical Software, vol. 35, no. 5, pp. 1–31, 2010.
+                </a>
             </resource>
             <!-- For authors (optional): example of a resource that links to a dW content area. -->
             <resource resource-category="Learn"> 
-            	R. Sen and M. H. Hansen, “Predicting Web Users’ Next Access Based on Log Data,” Journal of Computational and Graphical Statistics, vol. 12, no. 1, pp. 143–155, Mar. 2003.
-            	<a></a>
+            	<a href="http://www.jstor.org/discover/10.2307/1391073?uid=3739960&amp;uid=2129&amp;uid=2&amp;uid=70&amp;uid=4&amp;uid=3739256&amp;sid=21103603113867">
+                    R. Sen and M. H. Hansen, “Predicting Web Users’ Next Access Based on Log Data,” Journal of Computational and Graphical Statistics, vol. 12, no. 1, pp. 143–155, Mar. 2003.
+                </a>
 			</resource>
             <!-- For authors (optional): example of a resource that links to a dW event. -->
-            <resource resource-category="Learn"> Stay current with <a
-                    href="http://www.ibm.com/developerworks/offers/techbriefings/events.html">
-                    developerWorks technical events and webcasts</a> focused on a variety of 
-                IBM products and IT industry
-                topics. </resource>
+            <resource resource-category="Learn">
+                <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=1410313&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1410313">
+                    M. H. Dunham, Y. Meng, and J. Huang, “Extensible Markov Model,” in Data Mining, 2004. ICDM’04. Fourth IEEE International Conference on, 2004, pp. 371–374.
+                </a>
+            </resource>
             <!-- For authors (optional): example of a resource that links to dW Live!
 briefings main page. -->
-            <resource resource-category="Learn"> Attend a <a
+           <!--  <resource resource-category="Learn"> Attend a <a
                     href="http://www.ibm.com/developerworks/offers/techbriefings/">free 
                     developerWorks Live! briefing</a> to get up-to-speed quickly on IBM 
-                    products and tools as well as IT industry trends. </resource>
+                    products and tools as well as IT industry trends. </resource> -->
             <!-- For authors (optional): example of a resource that links to a dW outreach
 program. -->
-            <resource resource-category="Learn"> Follow <a
+            <!-- <resource resource-category="Learn"> Follow <a
                     href="http://www.twitter.com/developerworks/">developerWorks on
-                Twitter</a>.</resource>
+                Twitter</a>.</resource> -->
             <!-- For authors (optional): example of a resource that links to dW on-demand
 demos. -->
-            <resource resource-category="Learn"> Watch <a
+            <!-- <resource resource-category="Learn"> Watch <a
                     href="http://www.ibm.com/developerworks/offers/lp/demos/">developerWorks 
                     on-demand demos</a> ranging from product installation and setup demos for 
-                    beginners, to advanced functionality for experienced developers. </resource>
+                    beginners, to advanced functionality for experienced developers. </resource> -->
             <!-- For authors (optional): example of a resource that links to a dW product
 evaluation page. -->
-            <resource resource-category="Get products and technologies">
+            <!-- <resource resource-category="Get products and technologies">
                 <a href="http://www.ibm.com/developerworks/downloads/">Evaluate IBM 
                 products</a> in the way that suits you best: Download a product trial, try 
                 a product online, use a product in a cloud environment, or spend a few hours 
                 in the <a href="http://www.ibm.com/developerworks/downloads/soasandbox/index.html">
                 SOA Sandbox</a> learning how to implement Service Oriented Architecture efficiently.
-            </resource>
+            </resource> -->
             <!-- For authors (optional): example of a resource that links to a dW product
 evaluation page. -->
-            <resource resource-category="Discuss"> Get involved in the <a
+            <!-- <resource resource-category="Discuss"> Get involved in the <a
                     href="http://www.ibm.com/developerworks/community/"> My developerWorks 
                 community</a>. Connect with other developerWorks users while exploring the
-                developer-driven blogs, forums, groups, and wikis. </resource>
+                developer-driven blogs, forums, groups, and wikis. </resource> -->
         </resources>
         <!-- DO NOT REMOVE <journal-info> elements if this is a technical journal -->
         <journal-info journal-name="IBM Business Process Management Journal"
