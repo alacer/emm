@@ -5,9 +5,9 @@
     <kind>spl.relational::Filter</kind>
     <class>filteredStream</class>
     <operatorModelDirectory>/opt/ibm/InfoSphereStreams/toolkits/spl/spl/relational/Filter</operatorModelDirectory>
-    <applicationDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel</applicationDirectory>
-    <dataDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/data</dataDirectory>
-    <outputDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output</outputDirectory>
+    <applicationDirectory>/home/streams/StreamsStudio/workspace/emm</applicationDirectory>
+    <dataDirectory>/home/streams/StreamsStudio/workspace/emm/data</dataDirectory>
+    <outputDirectory>/home/streams/StreamsStudio/workspace/emm/output</outputDirectory>
     <optimized>true</optimized>
     <verbose>false</verbose>
     <networkByteOrdering>false</networkByteOrdering>
@@ -26,7 +26,7 @@
     </runtimeConstants>
     <sourceLocation>
       <file>Main.spl</file>
-      <line>52</line>
+      <line>51</line>
       <column>5</column>
     </sourceLocation>
     <productVersion>3.2.0.0</productVersion>
@@ -49,14 +49,14 @@
           <parameterExpressionMode>Expression</parameterExpressionMode>
           <sourceLocation>
             <file>Main.spl</file>
-            <line>54</line>
+            <line>53</line>
             <column>22</column>
           </sourceLocation>
         </value>
       </values>
       <sourceLocation>
         <file>Main.spl</file>
-        <line>54</line>
+        <line>53</line>
         <column>13</column>
       </sourceLocation>
     </parameter>
@@ -72,7 +72,7 @@
       <mutationAllowed>false</mutationAllowed>
       <sourceLocation>
         <file>Main.spl</file>
-        <line>53</line>
+        <line>52</line>
         <column>29</column>
       </sourceLocation>
       <attributes>
@@ -104,7 +104,7 @@
       <mutationAllowed>false</mutationAllowed>
       <sourceLocation>
         <file>Main.spl</file>
-        <line>52</line>
+        <line>51</line>
         <column>5</column>
       </sourceLocation>
       <attributes>

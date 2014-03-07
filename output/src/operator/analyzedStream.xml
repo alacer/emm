@@ -5,9 +5,9 @@
     <kind>com.ibm.streams.rproject::RScript</kind>
     <class>analyzedStream</class>
     <operatorModelDirectory>/opt/ibm/InfoSphereStreams/toolkits/com.ibm.streams.rproject/com.ibm.streams.rproject/RScript</operatorModelDirectory>
-    <applicationDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel</applicationDirectory>
-    <dataDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/data</dataDirectory>
-    <outputDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output</outputDirectory>
+    <applicationDirectory>/home/streams/StreamsStudio/workspace/emm</applicationDirectory>
+    <dataDirectory>/home/streams/StreamsStudio/workspace/emm/data</dataDirectory>
+    <outputDirectory>/home/streams/StreamsStudio/workspace/emm/output</outputDirectory>
     <optimized>true</optimized>
     <verbose>false</verbose>
     <networkByteOrdering>false</networkByteOrdering>

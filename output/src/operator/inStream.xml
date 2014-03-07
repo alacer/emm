@@ -5,9 +5,9 @@
     <kind>spl.adapter::FileSource</kind>
     <class>inStream</class>
     <operatorModelDirectory>/opt/ibm/InfoSphereStreams/toolkits/spl/spl/adapter/FileSource</operatorModelDirectory>
-    <applicationDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel</applicationDirectory>
-    <dataDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/data</dataDirectory>
-    <outputDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output</outputDirectory>
+    <applicationDirectory>/home/streams/StreamsStudio/workspace/emm</applicationDirectory>
+    <dataDirectory>/home/streams/StreamsStudio/workspace/emm/data</dataDirectory>
+    <outputDirectory>/home/streams/StreamsStudio/workspace/emm/output</outputDirectory>
     <optimized>true</optimized>
     <verbose>false</verbose>
     <networkByteOrdering>false</networkByteOrdering>
@@ -21,7 +21,7 @@
         <name>lit$0</name>
         <cppType>SPL::rstring</cppType>
         <splType>rstring</splType>
-        <value>"test-data.txt"</value>
+        <value>"../data/first-100-test-log.txt"</value>
       </runtimeConstant>
     </runtimeConstants>
     <sourceLocation>
@@ -42,7 +42,7 @@
           <splType>rstring</splType>
           <hasRuntimeConstant>true</hasRuntimeConstant>
           <cppExpression>lit$0</cppExpression>
-          <splExpression>"test-data.txt"</splExpression>
+          <splExpression>"../data/first-100-test-log.txt"</splExpression>
           <hasFunctions>false</hasFunctions>
           <hasSideEffects>false</hasSideEffects>
           <hasStreamAttributes>false</hasStreamAttributes>

@@ -3,7 +3,7 @@
 
   <description>Main application set</description>
 
-  <application applicationDirectory="../." applicationScope="Default" checkpointDirectory="../data/ckpt" dataDirectory="../data" name="Main" outputDirectory="/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output" version="1.0.0">
+  <application applicationDirectory="../." applicationScope="Default" checkpointDirectory="../data/ckpt" dataDirectory="../data" name="Main" outputDirectory="/home/streams/StreamsStudio/workspace/emm/output" version="1.0.0">
     <libraries/>
     <hostpools>
       <hostpool index="0" membershipMode="shared" name="$default"/>
@@ -51,7 +51,7 @@
               <poolLocation poolIndex="0"/>
             </resources>
             <runtimeConstants>
-              <runtimeConstant name="lit$0" value="&quot;../data/first-100-test-log.txt&quot;"/>
+              <runtimeConstant name="lit$0" submissionTimeValueIndex="0" value="&quot;&quot;"/>
             </runtimeConstants>
             <inputPorts/>
             <outputPorts>
@@ -159,16 +159,16 @@
     </operDefinitions>
     <composites>
       <sourceUris>
-        <uri index="0" path="file:///home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/Main.spl"/>
+        <uri index="0" path="file:///home/streams/StreamsStudio/workspace/emm/Main.spl"/>
       </sourceUris>
       <compositeOpers>
-        <compositeOper endLine="76" index="0" kind="Main" numberOfInputPorts="0" numberOfOutputPorts="0" sourceIndex="0" startLine="28" toolkitIndex="0">
+        <compositeOper endLine="79" index="0" kind="Main" numberOfInputPorts="0" numberOfOutputPorts="0" sourceIndex="0" startLine="28" toolkitIndex="0">
           <description>Main Composite</description>
         </compositeOper>
       </compositeOpers>
       <compositeOperInstances>
-        <compositeOperInstance compositeOperIndex="0" endLine="76" index="5" name="Main" sourceIndex="0" startLine="28">
-          <primitiveOperInstance endLine="34" index="0" kind="spl.adapter::FileSource" name="inStream" sourceIndex="0" startLine="31" toolkitIndex="1">
+        <compositeOperInstance compositeOperIndex="0" endLine="79" index="5" name="Main" sourceIndex="0" startLine="28">
+          <primitiveOperInstance endLine="37" index="0" kind="spl.adapter::FileSource" name="inStream" sourceIndex="0" startLine="34" toolkitIndex="1">
             <outputPorts>
               <port index="0">
                 <connections>
@@ -177,7 +177,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="48" index="1" kind="com.ibm.streams.rproject::RScript" name="parsedStream" sourceIndex="0" startLine="37" toolkitIndex="2">
+          <primitiveOperInstance endLine="51" index="1" kind="com.ibm.streams.rproject::RScript" name="parsedStream" sourceIndex="0" startLine="40" toolkitIndex="2">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -193,7 +193,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="54" index="2" kind="spl.relational::Filter" name="filteredStream" sourceIndex="0" startLine="51" toolkitIndex="1">
+          <primitiveOperInstance endLine="57" index="2" kind="spl.relational::Filter" name="filteredStream" sourceIndex="0" startLine="54" toolkitIndex="1">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -209,7 +209,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="68" index="3" kind="com.ibm.streams.rproject::RScript" name="analyzedStream" sourceIndex="0" startLine="57" toolkitIndex="2">
+          <primitiveOperInstance endLine="71" index="3" kind="com.ibm.streams.rproject::RScript" name="analyzedStream" sourceIndex="0" startLine="60" toolkitIndex="2">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -225,7 +225,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="75" index="4" kind="spl.adapter::FileSink" name="dbg" sourceIndex="0" startLine="71" toolkitIndex="1">
+          <primitiveOperInstance endLine="78" index="4" kind="spl.adapter::FileSink" name="dbg" sourceIndex="0" startLine="74" toolkitIndex="1">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -238,7 +238,7 @@
       </compositeOperInstances>
     </composites>
     <toolkits>
-      <toolkit index="0" name="Model" uri="file:///home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel" version="1.0.0"/>
+      <toolkit index="0" name="Model" uri="file:///home/streams/StreamsStudio/workspace/emm" version="1.0.0"/>
       <toolkit index="1" name="spl" uri="file:///opt/ibm/InfoSphereStreams/toolkits/spl" version="1.1.0"/>
       <toolkit index="2" name="com.ibm.streams.rproject" uri="file:///opt/ibm/InfoSphereStreams/toolkits/com.ibm.streams.rproject" version="1.0.100"/>
     </toolkits>
@@ -259,6 +259,9 @@
         <description>Number of tuple writes that failed</description>
       </customMetric>
     </customMetrics>
+    <submissionTimeValues>
+      <submissionTimeValue compositeName="Main" index="0" kind="named" name="logfile" required="true"/>
+    </submissionTimeValues>
   </application>
 
 </applicationSet>

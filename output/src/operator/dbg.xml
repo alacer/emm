@@ -5,9 +5,9 @@
     <kind>spl.adapter::FileSink</kind>
     <class>dbg</class>
     <operatorModelDirectory>/opt/ibm/InfoSphereStreams/toolkits/spl/spl/adapter/FileSink</operatorModelDirectory>
-    <applicationDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel</applicationDirectory>
-    <dataDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/data</dataDirectory>
-    <outputDirectory>/home/streams/StreamsStudio/StreamsStudio/workspace/rproject/WSModel/output</outputDirectory>
+    <applicationDirectory>/home/streams/StreamsStudio/workspace/emm</applicationDirectory>
+    <dataDirectory>/home/streams/StreamsStudio/workspace/emm/data</dataDirectory>
+    <outputDirectory>/home/streams/StreamsStudio/workspace/emm/output</outputDirectory>
     <optimized>true</optimized>
     <verbose>false</verbose>
     <networkByteOrdering>false</networkByteOrdering>

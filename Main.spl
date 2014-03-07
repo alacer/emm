@@ -26,11 +26,14 @@ use com.ibm.streams.rproject::*;
 
 
 composite Main {
+  param
+    expression<rstring> $logfile: getSubmissionTimeValue("logfile");
+
   graph
     // read entries from the log file
     stream<rstring line> 
     inStream = FileSource() {
-      param  file : "../data/first-100-test-log.txt";
+      param  file : $logfile;
     } 
  
     // parse the line using an R script

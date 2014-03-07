@@ -7,7 +7,9 @@
       <uri index="1" value="Main.spl"/>
     </uriTable>
     <namespace name="">
-      <compositeOp column="11" line="28" name="Main" potentialMain="true" uriIndex="1"/>
+      <compositeOp column="11" line="28" name="Main" potentialMain="true" uriIndex="1">
+        <parameter defaultValue="getSubmissionTimeValue(&quot;logfile&quot;)" metaType="Expression" name="logfile" optional="true" type="&lt;rstring>"/>
+      </compositeOp>
     </namespace>
     <dependency>
       <common:name>com.ibm.streams.rproject</common:name>
