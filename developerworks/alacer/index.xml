@@ -367,11 +367,18 @@ If you need to refer to this heading, fill in a unique refname; otherwise,
 leave refname blank. -->
             
             <heading alttoc="" refname="" type="major">Benefits of Streams/R Integration</heading>
-            <p>Aaron, I could use your help in this section.</p>
+            <p>
+                Most machine learning models used for prediction are trained off-line on large volumes of training data. Once the models are trained, prediction can usually happen in real-time. This method fits many classes of problems, but if the patterns to be predicted change frequently, this approach can generate models that lag beyond system they are trying to predict. Domains like network traffic, automotive traffic, financial transactions, or derivatives trading have patterns that can change quickly. Extensible Markov Models can be trained dynamically and this makes them a good fit to these domains.
+            </p>
+            <p>
+                Web server traffic is a domain with patterns that can change quickly. We demonstrate the use of an EMM to predict what content users will request with their next click when visiting a Web site. The server log provides an endless source of streaming data to train the model while the system is also making predictions.
+            </p>
             <!-- <heading refname="" type="minor">Minor heading example</heading>
             <p>This heading will not appear in the table of contents.</p> -->
             <heading alttoc="" refname="" type="major">Predicting Content Requests from Web Server Logs</heading>
-            <p>The EMM model has been used in analysis of spatiotemporal systems such as network traffic, environmental data, and vehicle traffic. In this work, we demonstrate the use of an EMM in predicting user requests for content on a website.</p>
+            <p>
+                The EMM model has been used in analysis of spatiotemporal systems such as network traffic, environmental data, and vehicle traffic. In this work, we demonstrate the use of an EMM in predicting user requests for content on a website.
+            </p>
             <heading alttoc="" refname="" type="minor">Web Server Logs</heading>
             <p> 
             	Web servers maintain a log of page requests. Among the items recorded for each request, the server logs the IP address of the requester, the time stamp of the request, and a path to the requested item. <a href="#table1">Table 1</a> below shows three example entries from a web server log. All three entries are from the same IP address for three separate items (two images and an HTML document). Note that server logs typically include two additional columns: a referrer URL and user agent. These three entries could represent a visit (or part thereof) to a web site. 
@@ -424,7 +431,7 @@ leave refname blank. -->
 
             <p></p>
 
-            <heading alttoc="" refname="" type="minor">The Dataset</heading>
+            <!-- <heading alttoc="" refname="" type="minor">The Dataset</heading>
             <p>
             	For this exercise, we analyze Web server logs for <a href="#resources">ClarkNet</a>—an Internet access provider for the Metro Baltimore-Washington DC area. The log contains approximately 1.6 million entries spanning a seven day period from midnight August 28, 1995 through midnight of September 3 1995. 
             </p>
@@ -436,7 +443,7 @@ leave refname blank. -->
             </p>
             <p>
             	We use a simple single order Markov Model where each page (HTML, PDF, PS) is a node in the graph. We use one additional node to represent a user leaving the site.
-            </p>
+            </p> -->
 
             <heading alttoc="" refname="" type="major">Details of the Solution</heading>
             <p>
