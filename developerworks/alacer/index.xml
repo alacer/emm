@@ -305,14 +305,18 @@ about the content (motive) and what he or she can gain from reading
 the content (benefits). The abstract is used for the META 
 abstract tag, and in some search results and in the article itself, if 
 the editor doesn't provide an abstract-extended element. -->
-        <abstract>Web server logs can be used to study the browsing habits of users. For example, in [1], the authors use mixtures of first-order Markov models to discover clusters of Web pages on a web site. They use these models to predict which pages users are likely to request next. The authors propose using this information to “pre-fetch” a page before a user actually requests it. In this work, we perform a similar analysis of web server logs to predict how users browse a website. We perform the analysis in real-time using IBM Infosphere Streams combined with R. To perform the stream clustering we use a recent implementation of the extensible Markov model called rEMM [2].</abstract>
+        <abstract>
+            Web server logs can be used to study the browsing habits of users. For example, Sen and Hansen used mixtures of first-order Markov models to discover clusters of Web pages on a web site. They used these models to predict which pages users were likely to request next. They proposed using this information to “pre-fetch” a page before a user actually requests it. In this work, we perform a similar analysis of web server logs to predict how users browse a website. We perform the analysis using IBM InfoSphere Streams combined with R. We use a streaming algorithm to model usage on a website called the Extensible Markov model (EMM). The EMM was developed by Dunham, Meng, and Huang. We use a recent implementation of EMM in R called rEMM created by Hashler and Dunham.
+        </abstract>
         <!-- ABSTRACT-EXTENDED
 For developerWorks staff use only. If you need HTML tagging or special 
 characters in the abstract, or want to include more than 5 sentences, fill 
 in the abstract-extended IN ADDITION to the abstract. When both are filled 
 in, the abstract is used for the META abstract tag, and in some search 
 results, while the abstract-extended appears in the article itself. -->
-        <abstract-extended>Web server logs can be used to study the browsing habits of users. For example, in [1], the authors use mixtures of first-order Markov models to discover clusters of Web pages on a web site. They use these models to predict which pages users are likely to request next. The authors propose using this information to “pre-fetch” a page before a user actually requests it. In this work, we perform a similar analysis of web server logs to predict how users browse a website. We perform the analysis in real-time using IBM Infosphere Streams combined with R. To perform the stream clustering we use a recent implementation of the extensible Markov model called rEMM [2].</abstract-extended>
+        <abstract-extended> 
+            Web server logs can be used to study the browsing habits of users. For example, <a href="#resources">Sen and Hansen</a> used mixtures of first-order Markov models to discover clusters of Web pages on a web site. They used these models to predict which pages users were likely to request next. They proposed using this information to “pre-fetch” a page before a user actually requests it. In this work, we perform a similar analysis of web server logs to predict how users browse a website. We perform the analysis using IBM InfoSphere Streams combined with R. We use a streaming algorithm to model usage on a website called the Extensible Markov model (EMM). The EMM was developed by <a href="#resources">2004 by Dunham, Meng, and Huang</a>. We use a recent implementation of EMM called rEMM created by <a href="#resources">Hashler and Dunham</a>.
+        </abstract-extended>
         <!-- START OF ARTICLE BODY
 For authors: your article can contain paragraphs, major headings, minor
 headings, code listings, images, tables, sidebars, lists, and highlighting. 
@@ -338,7 +342,7 @@ use <ol start="6">.  Do not nest ordered or unordered lists within p elements. -
                 <li>Details of solution</li>
                 <li>Results</li>
                 <li>Conclusions</li>
-                <li>Opportunities for follow-on work</li>
+                <!-- <li>Opportunities for follow-on work</li> -->
             </ul>
             <!-- MAJOR HEADING 
 For authors: major headings appear in the table of contents (TOC)   
@@ -355,7 +359,7 @@ Note: Be sure all refnames you use in your article are unique. -->
             	The Extensible Markov Model (EMM), first introduced in <a href="#resources">2004 by Dunham, Meng, and Huang</a>, combines a stream clustering algorithm with a Markov chain. The states of the Markov chain are clusters defined by the stream clustering algorithm. The transition probabilities between states define a temporal component of the model. An important aspect of the EMM is that it is able to train continuously. That is the model can train and predict in a single pass of the data. The EMM is able to change over time by both adding new states as they are encountered and fading or trimming existing states over time. This allows the model to adapt to changes in the simulated system. This could be very useful in the context of modeling traffic on a web site using web server using log files. The web site is likely to exhibit dynamic usage patterns as well as structural changes over time. Thus, a model that can account for these temporal changes in state and usage would seemingly be advantageous. 
             </p>
             <p>
-            	In this paper we demonstrate the use of an EMM in modeling and predicting user requests for content on a web site. We use server logs to both train and test the model. The solution is implemented using IBM InfoSphere Streams and R. The application framework is provided by Streams and R is used modeling and prediction.
+            	In this paper we demonstrate the use of an EMM in modeling and predicting user requests for content on a web site. We use server logs to both train and test the model. The solution is implemented using IBM InfoSphere Streams and R. The application framework is provided by Streams and R is used for modeling and prediction. For the EMM model, we use the rEMM library created by <a href="#resources">Hashler and Dunham</a>.
             </p>
             <!-- MINOR HEADING. For authors: minor headings organize major 
 sections into smaller units, and do not appear in the table of contents. 
@@ -367,7 +371,7 @@ leave refname blank. -->
             <!-- <heading refname="" type="minor">Minor heading example</heading>
             <p>This heading will not appear in the table of contents.</p> -->
             <heading alttoc="" refname="" type="major">Predicting Content Requests from Web Server Logs</heading>
-            <p>The EMM model has been used to in traffic analysis, more examples ... In this work, we demonstrate the use of an EMM in predicting user requests for content on a website. </p>
+            <p>The EMM model has been used in analysis of spatiotemporal systems such as network traffic, environmental data, and vehicle traffic. In this work, we demonstrate the use of an EMM in predicting user requests for content on a website.</p>
             <heading alttoc="" refname="" type="minor">Web Server Logs</heading>
             <p> 
             	Web servers maintain a log of page requests. Among the items recorded for each request, the server logs the IP address of the requester, the time stamp of the request, and a path to the requested item. <a href="#table1">Table 1</a> below shows three example entries from a web server log. All three entries are from the same IP address for three separate items (two images and an HTML document). Note that server logs typically include two additional columns: a referrer URL and user agent. These three entries could represent a visit (or part thereof) to a web site. 
@@ -422,10 +426,10 @@ leave refname blank. -->
 
             <heading alttoc="" refname="" type="minor">The Dataset</heading>
             <p>
-            	For this exercise, we analyze Web server logs for <a href="http://ita.ee.lbl.gov/html/contrib/ClarkNet-HTTP.html">ClarkNet</a>—an Internet access provider for the Metro Baltimore-Washington DC area. The log contains approximately 1.6 million entries spanning a seven day period from midnight August 28, 1995 through midnight of September 3 1995. 
+            	For this exercise, we analyze Web server logs for <a href="#resources">ClarkNet</a>—an Internet access provider for the Metro Baltimore-Washington DC area. The log contains approximately 1.6 million entries spanning a seven day period from midnight August 28, 1995 through midnight of September 3 1995. 
             </p>
             <p>
-            	We limit our interest to requests for HTML pages, PDF documents, and PostScript documents. Thus, we ignore all requests for images (e.g. JPG, GIF), JavaScript, or other non-content items. We only include entries that result in successful requests, that is log entries that have results status code 200. We also attempt to filter out requests made by bots or spiders. To identify requests originating from bots we examine every entry in the log and compile a list of IP addresses who access <code type="inline">robots.txt</code>. This is likely not sufficient for a production solution, but for our purposes it likely sufficed. After applying the above filtering criteria, the original 1.6 million lines were reduced to approximate 350 thousand.
+            	Like <a href="#resources">Sen and Hansen</a>, we limit our interest to requests for HTML pages, PDF documents, and PostScript documents. Thus, we ignore all requests for images (e.g. JPG, GIF), JavaScript, or other non-"content" items. We only include entries that result in successful requests, that is log entries that have results status code 200. We also attempt to filter out requests made by bots or spiders. To identify requests originating from bots we examine every entry in the log and compile a list of IP addresses who access <code type="inline">robots.txt</code>. This is likely not sufficient for a production solution, but for our purposes it likely sufficed. After applying the above filtering criteria, the original 1.6 million lines were reduced to approximate 350 thousand.
             </p>
             <p>
             	The remaining entries are ordered by IP address and then by time stamp. This sorting is necessary, because web servers log requests in the order they are received. Since, most web sites will have multiple simultaneous visitors, the requests for any particular user will be mixed up with other users' requests. Sorting by IP address and then by time stamp recreates the series of requests made by each user of the site. Thus sorted, the entries are split into visits. In this case, we define a visit as a series of GET requests no two of which are greater than 15 minutes apart. Once we have the sorted visits, we have a suitable dataset for training the EMM.
@@ -566,7 +570,7 @@ get.tuple &lt;- function(log.entry) {
 </code>
 
 <p>
-    <a href="#listing3">Code Listing 3<a> contains the R script called to parse log entries. This script utilizes the functions in <a href="listing2">Code listing 2</a>.
+    <a href="#listing3">Code Listing 3</a> contains the R script called to parse log entries. This script utilizes the functions in <a href="listing2">Code listing 2</a>.
 </p>
 
 <code type="section" width="100%">
@@ -630,6 +634,36 @@ if (! is.null(last.request)) {
 }
 </code>
 
+<heading alttoc="" refname="" type="major">Results</heading>
+<p>
+    The output from the application is a tuple of the originating IP address, the requested path, and a list of the paths of the twenty most likely items the user will request next. The <a href="#table2">table</a> below contains an example output tuple.
+</p>
+
+<heading refname="table2" type="table">Example Output Tuple</heading>
+<table border="0" cellpadding="0" cellspacing="0" class="ibm-data-table"
+    summary="Example entries in a web server log">
+    <tr>
+        <th scope="col">(IP Address, Path of requested item, [list of predicted paths])</th>
+    </tr>
+    <tr>
+        <td>(123.123.123.123, index.html, [ ])</td>
+    </tr>
+</table>
+
+<p>
+
+</p>
+
+<heading alttoc="" refname="" type="major">Conclusion</heading>
+<p>
+    We demonstrated the use of IBM InfoSphere Stream and R in predicting users' requests for content from a web server using that server's logs. The modeling and predictions were performed using rEMM and implementation of the Extensible Markov Model (EMM) in R. 
+</p>
+<p>
+    Improvements in runtime could be accomplished by more fully leveraging the stream clustering component of the EMM. In the system described here, each content item is represented by a state in the model. This results in a very large number of parameters which negatively impacts the runtime efficiency of the application. To lessen the number of parameters and thus improve running time some sort of clustering of content items would be beneficial. Since the content items are represented by directory paths, they exhibit a natural tree structure. This could leveraged when extracting feature vectors for use with the EMM. Such vectors would form form natural structural clusters. This would reduce the parameter space and result in more efficient prediction running time.
+</p>
+<p>
+    The drawback to this type of strategy would be a loss of granularity. That is, we would not know the transition probabilities between individual content items (as we do in the current configuration). However, this may not be necessary or even desired. 
+</p>
 
             <!-- <heading alttoc="" refname="code-hd" type="major">Code listings</heading>
             <p><a name="code-text">Code listings</a> are common in developerWorks content.
@@ -907,6 +941,11 @@ you coded the <forum-url> element (this link will be added automatically).
             <resource resource-category="Learn">
                 <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=1410313&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1410313">
                     M. H. Dunham, Y. Meng, and J. Huang, “Extensible Markov Model,” in Data Mining, 2004. ICDM’04. Fourth IEEE International Conference on, 2004, pp. 371–374.
+                </a>
+            </resource>
+            <resource resource-category="Learn">
+                <a href="http://ita.ee.lbl.gov/html/contrib/ClarkNet-HTTP.html">
+                    S. Balbach, M. Arlitt, and C Williamson, 1996, [Online] Available: http://ita.ee.lbl.gov/html/contrib/ClarkNet-HTTP.html
                 </a>
             </resource>
             <!-- For authors (optional): example of a resource that links to dW Live!
