@@ -12,7 +12,7 @@ PE_LIB := $(shell $(PKGCONFIG) --libs dst-spl-pe-install)
 PE_STAND_LIB := $(shell $(PKGCONFIG) --libs dst-spl-pe-install-standalone)
 SPL_CXXFLAGS = -Wall -Wno-unused -Wno-sign-compare
 SPL_CXXFLAGS += -D_REENTRANT -fPIC -finline-functions -fmessage-length=0
-SPL_CXXFLAGS += $(PE_INCLUDE) -O3 -DNDEBUG 
+SPL_CXXFLAGS += $(PE_INCLUDE) -O3 -DNDEBUG  -g
 SPL_LDFLAGS = $(PE_LIB)
 
 SPL_TYPES = build/type/BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue.o \
