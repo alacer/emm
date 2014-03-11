@@ -643,17 +643,17 @@ if (! is.null(last.request)) {
 
 <heading alttoc="" refname="" type="major">Results</heading>
 <p>
-    The output from the application is a tuple of the originating IP address, the requested path, and a list of the paths of the twenty most likely items the user will request next. The <a href="#table2">table</a> below contains an example output tuple.
+    The application produces output tuples  composed of the originating IP address, the requested path, and a list of the paths of the twenty most likely items the user will request next. The <a href="#table2">table</a> below contains an example output tuple. 
 </p>
 
 <heading refname="table2" type="table">Example Output Tuple</heading>
 <table border="0" cellpadding="0" cellspacing="0" class="ibm-data-table"
     summary="Example entries in a web server log">
     <tr>
-        <th scope="col">(IP Address, Path of requested item, [list of predicted paths])</th>
+        <th scope="col">IP Address, Path of requested item, [list of predicted paths]</th>
     </tr>
     <tr>
-        <td>(123.123.123.123, index.html, [ ])</td>
+        <td>"123.123.123.123", "/pub/atomicbk/catalog/sleazbk.html", ["/atomicbk/new/new.html", "/atomicbk/images/gallery.html", "/atomicbk/shocked.html", ...]</td>
     </tr>
 </table>
 
@@ -666,7 +666,7 @@ if (! is.null(last.request)) {
     We demonstrated the use of IBM InfoSphere Stream and R in predicting users' requests for content from a web server using that server's logs. The modeling and predictions were performed using rEMM and implementation of the Extensible Markov Model (EMM) in R. 
 </p>
 <p>
-    Improvements in runtime could be accomplished by more fully leveraging the stream clustering component of the EMM. In the system described here, each content item is represented by a state in the model. This results in a very large number of parameters which negatively impacts the runtime efficiency of the application. To lessen the number of parameters and thus improve running time some sort of clustering of content items would be beneficial. Since the content items are represented by directory paths, they exhibit a natural tree structure. This could leveraged when extracting feature vectors for use with the EMM. Such vectors would form form natural structural clusters. This would reduce the parameter space and result in more efficient prediction running time.
+    Improvements in runtime could be accomplished by more fully leveraging the stream clustering component of the EMM. In the system described here, each content item is represented by a state in the model. This results in a very large number of parameters which negatively impacts the runtime efficiency of the application. To lessen the number of parameters and thus improve running time some sort of clustering of content items would be beneficial. Since the content items are represented by directory paths, they exhibit a natural tree structure. This could be leveraged when extracting feature vectors for use with the EMM. Such vectors would form natural structural clusters. This would reduce the parameter space and result in more efficient prediction running time.
 </p>
 <p>
     The drawback to this type of strategy would be a loss of granularity. That is, we would not know the transition probabilities between individual content items (as we do in the current configuration). However, this may not be necessary or even desired. 
