@@ -1,4 +1,4 @@
-// eJx1jssKwjAQRZlfKa6T1GV21epCFIXgB8R2tMHmwSSl9O_0NlQouZBaHC8M9N4ae6VaHhCTl3vSo_1EANQgkiXwkFYzxNAfkGDyOd1LieGpdxrerzbluXrCvmv96klQB1OUpJMZFxDwDgnbfIc0RtI1cfqjS0xvPR0zMG3SBHa3mrkwbn3Vt8zysyfroWQZVyvg0J94Q4iwX44Okr_1zMTLNBckg1LpxAvGV5OA5
+// eJx1UE1rwzAMRX_0l7Bw7bRkjty5ZYFm7Dpydh5soq2kcG9khZL9_0WksLPQwdxEN6H1LwfaJb7SNSlpWmR_0VGahBSkFxLWCSJiLNH8YzVRDs1Ledm4Pa5KfYveZEmx8Xdzkzvr3JVm_1W4mx_19W1Hu5zD91A1V9dP6xu2_00qnK3R9ZslVv4oME9bHNMgqRzPANAOLoLAqGqG0Q6tJVHFvjxOToFLxuUKC1otVRw_0AG5Lwdn8CKd1pXg01kfBgjloQInSOrIw8LppcXIHmTZfIxRGe3hp_0i_03NCCc47uqX85xlggc5urHE1l_1IXA8xvDD
 
 
 
@@ -139,30 +139,10 @@ while(!getPE().getShutdownRequested() && !fs.eof()) {
     bool doSubmit = true;
     try {
         
-            // ignore comments and empty lines
-            fs >> SPL::skipSpaceTabReturnNewLines;
-            while (fs.peek() == '#') {
-                std::string dummy;
-                std::getline (fs, dummy);
-                fs >> SPL::skipSpaceTabReturnNewLines;
-            }
-            if (SPL::safePeek(fs)==EOF) break;
-            failedRead = false;
+            SPL::rstring& t = tuple$.get_line();
+            std::getline (fs, t, '\n');
             
-
-                
-                    SPL::readCSV<SPL::rstring,','>(fs, tuple$.get_line());
-                    
-                CHECK_ERROR (SPL_APPLICATION_RUNTIME_FAILED_READ_TUPLE("tuple<rstring line>", _tupleNumber));
-                CHECK_FAIL;
-                
-                 
-                    // Check that we read a complete line
-                    int eolSep = fs.get();
-                    if (eolSep != '\n' && eolSep != '\r' && eolSep != EOF)
-                        DO_ERROR (SPL_APPLICATION_RUNTIME_FAILED_READ_CHAR ("\\n", std::string(1, (char) eolSep), _tupleNumber));
-                
-            
+            if (fs.fail() || (fs.eof() && t.empty())) break;
         
 
 
@@ -232,6 +212,8 @@ MY_BASE_OPERATOR::MY_BASE_OPERATOR()
     uint32_t index = getIndex();
     initRTC(*this, lit$0, "lit$0");
     addParameterValue ("file", SPL::ConstValueHandle(lit$0));
+    param$format$0 = "line";
+    addParameterValue ("format", SPL::ConstValueHandle(param$format$0));
     (void) getParameters(); // ensure thread safety by initializing here
 }
 MY_BASE_OPERATOR::~MY_BASE_OPERATOR()

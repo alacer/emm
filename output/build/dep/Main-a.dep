@@ -1,10 +1,10 @@
 	@$(CXX) $(SPL_CXXFLAGS) -o bin/Main-a.dpe -fPIC -shared $(PEMain-a) -lstreams-stdtk-runtime -lstreams-stdtk-runtime $(SPL_LDFLAGS)build/pe/BeJwzNEnMS8yprEpNCS4pSk3MjTdOSUqPNzRJy8wpSS2Ci1pk5kFZhkYFiUXFcAkADREYBO.o \
 	    build/operator/inStream.o \
 	    build/type/BeJwrMSw2ycnMSwUADOECD1.o \
+	    build/type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.o \
 	    build/operator/parsedStream.o \
 	    build/type/BeJwrMSo2yy_1KTM_1MKzYpSCzJAAAzTAYs.o \
 	    build/operator/filteredStream.o \
 	    build/operator/analyzedStream.o \
 	    build/type/BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue.o \
-	    build/operator/dbg.o \
-	    build/type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.o 
+	    build/operator/dbg.o 

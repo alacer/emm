@@ -40,7 +40,7 @@
       <pe class="BeJwzNEnMS8yprEpNCS4pSk3MjTdOSUqPNzRJy8wpSS2Ci1pk5kFZhkYFiUXFcAkADREYBO" index="0" language="C++" optimized="true" relocatable="false" restartable="false">
         <envVars/>
         <executable digest="Ksn9ROkX1MdGZlBkpKXzhS8hW3w=" dynamicLoad="true">
-          <wrapper>sdb</wrapper>
+          <wrapper>none</wrapper>
           <executableUri>bin/Main-a.dpe</executableUri>
           <arguments/>
           <dependencies/>
@@ -51,7 +51,7 @@
               <poolLocation poolIndex="0"/>
             </resources>
             <runtimeConstants>
-              <runtimeConstant name="lit$0" submissionTimeValueIndex="1" value="&quot;&quot;"/>
+              <runtimeConstant name="lit$0" submissionTimeValueIndex="0" value="&quot;&quot;"/>
             </runtimeConstants>
             <inputPorts/>
             <outputPorts>
@@ -132,7 +132,6 @@
             <outputPorts/>
           </operInstance>
         </operInstances>
-        <display name="display" submissionTimeValueIndex="0" value=""/>
         <tracing level="error"/>
         <inputPorts/>
         <outputPorts/>
@@ -163,13 +162,13 @@
         <uri index="0" path="file:///home/streams/StreamsStudio/workspace/emm/Main.spl"/>
       </sourceUris>
       <compositeOpers>
-        <compositeOper endLine="79" index="0" kind="Main" numberOfInputPorts="0" numberOfOutputPorts="0" sourceIndex="0" startLine="28" toolkitIndex="0">
+        <compositeOper endLine="82" index="0" kind="Main" numberOfInputPorts="0" numberOfOutputPorts="0" sourceIndex="0" startLine="28" toolkitIndex="0">
           <description>Main Composite</description>
         </compositeOper>
       </compositeOpers>
       <compositeOperInstances>
-        <compositeOperInstance compositeOperIndex="0" endLine="79" index="5" name="Main" sourceIndex="0" startLine="28">
-          <primitiveOperInstance endLine="37" index="0" kind="spl.adapter::FileSource" name="inStream" sourceIndex="0" startLine="34" toolkitIndex="1">
+        <compositeOperInstance compositeOperIndex="0" endLine="82" index="5" name="Main" sourceIndex="0" startLine="28">
+          <primitiveOperInstance endLine="40" index="0" kind="spl.adapter::FileSource" name="inStream" sourceIndex="0" startLine="34" toolkitIndex="1">
             <outputPorts>
               <port index="0">
                 <connections>
@@ -178,7 +177,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="51" index="1" kind="com.ibm.streams.rproject::RScript" name="parsedStream" sourceIndex="0" startLine="40" toolkitIndex="2">
+          <primitiveOperInstance endLine="54" index="1" kind="com.ibm.streams.rproject::RScript" name="parsedStream" sourceIndex="0" startLine="43" toolkitIndex="2">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -194,7 +193,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="57" index="2" kind="spl.relational::Filter" name="filteredStream" sourceIndex="0" startLine="54" toolkitIndex="1">
+          <primitiveOperInstance endLine="60" index="2" kind="spl.relational::Filter" name="filteredStream" sourceIndex="0" startLine="57" toolkitIndex="1">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -210,7 +209,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="71" index="3" kind="com.ibm.streams.rproject::RScript" name="analyzedStream" sourceIndex="0" startLine="60" toolkitIndex="2">
+          <primitiveOperInstance endLine="74" index="3" kind="com.ibm.streams.rproject::RScript" name="analyzedStream" sourceIndex="0" startLine="63" toolkitIndex="2">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -226,7 +225,7 @@
               </port>
             </outputPorts>
           </primitiveOperInstance>
-          <primitiveOperInstance endLine="78" index="4" kind="spl.adapter::FileSink" name="dbg" sourceIndex="0" startLine="74" toolkitIndex="1">
+          <primitiveOperInstance endLine="81" index="4" kind="spl.adapter::FileSink" name="dbg" sourceIndex="0" startLine="77" toolkitIndex="1">
             <inputPorts>
               <port index="0">
                 <connections>
@@ -261,8 +260,7 @@
       </customMetric>
     </customMetrics>
     <submissionTimeValues>
-      <submissionTimeValue compositeName="Main" index="1" kind="named" name="logfile" required="true"/>
-      <submissionTimeValue compositeName="streams::pe" defaultValue="" index="0" kind="named" name="display" required="false"/>
+      <submissionTimeValue compositeName="Main" index="0" kind="named" name="logfile" required="true"/>
     </submissionTimeValues>
   </application>
 

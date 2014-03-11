@@ -12,7 +12,7 @@ PE_LIB := $(shell $(PKGCONFIG) --libs dst-spl-pe-install)
 PE_STAND_LIB := $(shell $(PKGCONFIG) --libs dst-spl-pe-install-standalone)
 SPL_CXXFLAGS = -Wall -Wno-unused -Wno-sign-compare
 SPL_CXXFLAGS += -D_REENTRANT -fPIC -finline-functions -fmessage-length=0
-SPL_CXXFLAGS += $(PE_INCLUDE) -O3 -DNDEBUG  -g
+SPL_CXXFLAGS += $(PE_INCLUDE) -O3 -DNDEBUG 
 SPL_LDFLAGS = $(PE_LIB)
 
 SPL_TYPES = build/type/BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue.o \
@@ -81,7 +81,8 @@ operators: $(SPL_OPERATORS)
 build/operator/inStream.o: \
 	    src/operator/inStream.h \
 	    src/operator/inStream.cpp\
-	    build/dep/operator/inStream.dep  \
+	    build/dep/operator/inStream.dep \
+	    src/type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.h  \
 	    build/cppOptions \
 	    | build/operator
 	@echo ' [CXX-operator] inStream'
@@ -147,13 +148,13 @@ PEMain-a = \
 	    build/pe/BeJwzNEnMS8yprEpNCS4pSk3MjTdOSUqPNzRJy8wpSS2Ci1pk5kFZhkYFiUXFcAkADREYBO.o \
 	    build/operator/inStream.o \
 	    build/type/BeJwrMSw2ycnMSwUADOECD1.o \
+	    build/type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.o \
 	    build/operator/parsedStream.o \
 	    build/type/BeJwrMSo2yy_1KTM_1MKzYpSCzJAAAzTAYs.o \
 	    build/operator/filteredStream.o \
 	    build/operator/analyzedStream.o \
 	    build/type/BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue.o \
-	    build/operator/dbg.o \
-	    build/type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.o 
+	    build/operator/dbg.o 
 
 bin/Main-a.dpe: \
 	$(PEMain-a) \

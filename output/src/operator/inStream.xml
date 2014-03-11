@@ -14,6 +14,7 @@
     <codeBeautification>false</codeBeautification>
     <includes>
       <include>"../type/BeJwrMSw2ycnMSwUADOECD1.h"</include>
+      <include>"../type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.h"</include>
     </includes>
     <stateVariables/>
     <runtimeConstants>
@@ -21,12 +22,12 @@
         <name>lit$0</name>
         <cppType>SPL::rstring</cppType>
         <splType>rstring</splType>
-        <value>"../data/first-100-test-log.txt"</value>
+        <value>""</value>
       </runtimeConstant>
     </runtimeConstants>
     <sourceLocation>
       <file>Main.spl</file>
-      <line>31</line>
+      <line>34</line>
       <column>5</column>
     </sourceLocation>
     <productVersion>3.2.0.0</productVersion>
@@ -42,22 +43,48 @@
           <splType>rstring</splType>
           <hasRuntimeConstant>true</hasRuntimeConstant>
           <cppExpression>lit$0</cppExpression>
-          <splExpression>"../data/first-100-test-log.txt"</splExpression>
+          <splExpression>getSubmissionTimeValue("logfile")</splExpression>
           <hasFunctions>false</hasFunctions>
           <hasSideEffects>false</hasSideEffects>
           <hasStreamAttributes>false</hasStreamAttributes>
           <parameterExpressionMode>AttributeFree</parameterExpressionMode>
           <sourceLocation>
             <file>Main.spl</file>
-            <line>33</line>
-            <column>21</column>
+            <line>30</line>
+            <column>35</column>
           </sourceLocation>
         </value>
       </values>
       <sourceLocation>
         <file>Main.spl</file>
-        <line>33</line>
-        <column>14</column>
+        <line>37</line>
+        <column>9</column>
+      </sourceLocation>
+    </parameter>
+    <parameter>
+      <name>format</name>
+      <values>
+        <value>
+          <cppType>DataFormat</cppType>
+          <splType>DataFormat</splType>
+          <hasRuntimeConstant>false</hasRuntimeConstant>
+          <cppExpression>line</cppExpression>
+          <splExpression>line</splExpression>
+          <hasFunctions>false</hasFunctions>
+          <hasSideEffects>false</hasSideEffects>
+          <hasStreamAttributes>false</hasStreamAttributes>
+          <parameterExpressionMode>CustomLiteral</parameterExpressionMode>
+          <sourceLocation>
+            <file>Main.spl</file>
+            <line>38</line>
+            <column>18</column>
+          </sourceLocation>
+        </value>
+      </values>
+      <sourceLocation>
+        <file>Main.spl</file>
+        <line>38</line>
+        <column>9</column>
       </sourceLocation>
     </parameter>
   </parameters>
@@ -74,7 +101,7 @@
       <mutationAllowed>true</mutationAllowed>
       <sourceLocation>
         <file>Main.spl</file>
-        <line>31</line>
+        <line>34</line>
         <column>5</column>
       </sourceLocation>
       <attributes>

@@ -1,4 +1,4 @@
-// eJx1jssKwjAQRZlfKa6T1GV21epCFIXgB8R2tMHmwSSl9O_0NlQouZBaHC8M9N4ae6VaHhCTl3vSo_1EANQgkiXwkFYzxNAfkGDyOd1LieGpdxrerzbluXrCvmv96klQB1OUpJMZFxDwDgnbfIc0RtI1cfqjS0xvPR0zMG3SBHa3mrkwbn3Vt8zysyfroWQZVyvg0J94Q4iwX44Okr_1zMTLNBckg1LpxAvGV5OA5
+// eJx1UE1rwzAMRX_0l7Bw7bRkjty5ZYFm7Dpydh5soq2kcG9khZL9_0WksLPQwdxEN6H1LwfaJb7SNSlpWmR_0VGahBSkFxLWCSJiLNH8YzVRDs1Ledm4Pa5KfYveZEmx8Xdzkzvr3JVm_1W4mx_19W1Hu5zD91A1V9dP6xu2_00qnK3R9ZslVv4oME9bHNMgqRzPANAOLoLAqGqG0Q6tJVHFvjxOToFLxuUKC1otVRw_0AG5Lwdn8CKd1pXg01kfBgjloQInSOrIw8LppcXIHmTZfIxRGe3hp_0i_03NCCc47uqX85xlggc5urHE1l_1IXA8xvDD
 
 
 
@@ -18,6 +18,7 @@ namespace streams_boost { namespace iostreams { class file_descriptor_source; } 
 using namespace UTILS_NAMESPACE;
 
 #include "../type/BeJwrMSw2ycnMSwUADOECD1.h"
+#include "../type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.h"
 
 
 #define MY_OPERATOR inStream$OP
@@ -54,6 +55,7 @@ public:
     
 protected:
     Mutex $svMutex;
+    SPL::rstring param$format$0;
     void checkpointStateVariables(NetworkByteBuffer & opstate) const {
     }
     void restoreStateVariables(NetworkByteBuffer & opstate) {

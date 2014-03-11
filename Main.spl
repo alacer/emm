@@ -33,7 +33,10 @@ composite Main {
     // read entries from the log file
     stream<rstring line> 
     inStream = FileSource() {
-      param  file : $logfile;
+      param  
+        file : $logfile;
+        format : line;
+             
     } 
  
     // parse the line using an R script
