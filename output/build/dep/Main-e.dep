@@ -1,4 +1,4 @@
 	@$(CXX) $(SPL_CXXFLAGS) -o bin/Main-e.dpe -fPIC -shared $(PEMain-e) -lstreams-stdtk-runtime $(SPL_LDFLAGS)build/pe/BeJwzTklKjwcABOcBDA.o \
 	    build/operator/dbg.o \
-	    build/type/BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue.o \
-	    build/type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.o 
+	    build/type/BeJyrNI03Ti4uMy6pKDFOyswzTcrJT842ycnMSwUAf_1wJCo.o \
+	    build/type/BeJwrMS42yy_1KTM_1MKzYpSCzJyCk2NCgoSk3JTC7JzM8DALDuAue.o 

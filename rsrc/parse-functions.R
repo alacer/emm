@@ -52,7 +52,7 @@ get.tuple <- function(log.entry) {
     origin <- "filter me"
   } else if(path == FALSE) {
     origin <- "filter me"
-  } else if (! grepl(pattern="\\S+\\.(htm|html|pdf|ps)$", x=path, perl=TRUE)) {
+  } else if (grepl(pattern="\\S+\\.(css|CSS|jpg|JPG|png|PNG|js|JS|gif|GIF|ico|ICO)$", x=path, perl=TRUE)) {
     origin <- "filter me"
   } else if (origin %in% bot.list) {
     origin <- "filter me"
@@ -60,3 +60,4 @@ get.tuple <- function(log.entry) {
 
   return(list(origin, path))
 }
+

@@ -40,10 +40,10 @@ def its_been_too_long(timestamp1, timestamp2):
     Returns true if the difference between timestamp1 and timestamp2 is 
     greater than 15 minutes.
     """
-    fmt = '%Y-%m-%dT%H:%M:%S-04:00'
+    fmt = '%Y-%m-%dT%H:%M:%S+00:00'
     dt1 = datetime.datetime.strptime(timestamp1, fmt)
     dt2 = datetime.datetime.strptime(timestamp2, fmt)
-    delta = abs((dt1 - dt2).total_seconds())
+    delta = abs((dt1 - dt2).seconds)
     return (delta > 15*60)
 
 
@@ -75,16 +75,16 @@ def parse_apache_date(date_str, tz_str):
     return datetime.datetime(*tt)
 
 
-keep = re.compile(r"\S+\.(htm|html|pdf|ps)$")
+keep = re.compile(r"\S+\.(css|CSS|jpg|JPG|png|PNG|js|JS|gif|GIF|ico|ICO)$")
 def is_keeper(match_info):
     """
-    Returns true if the status is 200 and the requested item is for HTML, PDF,
-    or PS.
+    Returns true if the status is 200 and the requested item is not for css, 
+    jpg, png, or js files.
     """
     if match_info.group('status').find('200') == -1:
         return False
     match = keep.match(match_info.group('path'))
-    if not match:
+    if match:
         return False
     return True
 
@@ -186,14 +186,14 @@ for i in range(1, len(entries)):
 visits.append(OFF_SITE)
 
 # write visits to visits.csv
-with open('visits.csv', 'w') as out_file:
+with open('visits-ibm.csv', 'w') as out_file:
     for visit in visits:
         out_file.write("{0}".format(visit))
         out_file.write('\n')
 
 sorted_pages = sorted(pages.iteritems(), key=operator.itemgetter(1))
 # write sorted pages to pages.csv
-with open('pages.csv', 'w') as out_file:
+with open('pages-ibm.csv', 'w') as out_file:
     writer = csv.writer(out_file)
     for itm in sorted_pages:
         writer.writerow(itm)

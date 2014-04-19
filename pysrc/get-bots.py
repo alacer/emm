@@ -77,7 +77,7 @@ for count, line in enumerate(itertools.islice(sys.stdin, 0, None)):
     if bot_match:
         bots[match_info.group('origin')] = 1
 
-with open('bots.csv', 'w') as out_file:
+with open('bots-ibm.csv', 'w') as out_file:
     for bot in bots.keys():
         out_file.write(bot)
         out_file.write('\n')
