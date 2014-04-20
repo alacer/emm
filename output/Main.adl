@@ -40,7 +40,7 @@
       <pe class="BeJwzNEnMS8yprEpNCS4pSk3MjTdOSUqPNzRJy8wpSS2Ci1pk5kFZhkYFiUXFcAkADREYBO" index="0" language="C++" optimized="true" relocatable="false" restartable="false">
         <envVars/>
         <executable digest="Ksn9ROkX1MdGZlBkpKXzhS8hW3w=" dynamicLoad="true">
-          <wrapper>sdb</wrapper>
+          <wrapper>none</wrapper>
           <executableUri>bin/Main-a.dpe</executableUri>
           <arguments/>
           <dependencies/>
@@ -51,7 +51,7 @@
               <poolLocation poolIndex="0"/>
             </resources>
             <runtimeConstants>
-              <runtimeConstant name="lit$0" submissionTimeValueIndex="1" value="&quot;&quot;"/>
+              <runtimeConstant name="lit$0" submissionTimeValueIndex="0" value="&quot;&quot;"/>
             </runtimeConstants>
             <inputPorts/>
             <outputPorts>
@@ -132,7 +132,6 @@
             <outputPorts/>
           </operInstance>
         </operInstances>
-        <display name="display" submissionTimeValueIndex="0" value=""/>
         <tracing level="error"/>
         <inputPorts/>
         <outputPorts/>
@@ -261,8 +260,7 @@
       </customMetric>
     </customMetrics>
     <submissionTimeValues>
-      <submissionTimeValue compositeName="Main" index="1" kind="named" name="logfile" required="true"/>
-      <submissionTimeValue compositeName="streams::pe" defaultValue="" index="0" kind="named" name="display" required="false"/>
+      <submissionTimeValue compositeName="Main" index="0" kind="named" name="logfile" required="true"/>
     </submissionTimeValues>
   </application>
 

@@ -75,17 +75,21 @@ def parse_apache_date(date_str, tz_str):
     return datetime.datetime(*tt)
 
 
-keep = re.compile(r"\S+\.(css|CSS|jpg|JPG|png|PNG|js|JS|gif|GIF|ico|ICO)$")
+url_pat = re.compile(r"[/\w\.-]+/?$")
+filter_pat = re.compile(r"\S+\.[a-zA-Z]+$") #(css|CSS|jpg|JPG|png|PNG|js|JS|gif|GIF|ico|ICO)$")
 def is_keeper(match_info):
     """
-    Returns true if the status is 200 and the requested item is not for css, 
-    jpg, png, or js files.
+    Returns true if the status is 200 and the requested item looks like a
+    truncated URL.
     """
     if match_info.group('status').find('200') == -1:
         return False
-    match = keep.match(match_info.group('path'))
+    match = url_pat.match(match_info.group('path'))
+    if not match:
+        return False # does not match truncated URL pattern
+    match = filter_pat.match(match_info.group('path'))
     if match:
-        return False
+        return False # matches filter type 
     return True
 
 

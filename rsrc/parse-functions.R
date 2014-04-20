@@ -8,7 +8,7 @@ if (file.exists("../data/bot-list.RData")) {
 }
 
 origin.pattern <- "^\\S+(\\.\\S+)*\\.\\S+"
-path.pattern <- "GET\\s+[/\\w]+.\\w+"
+path.pattern <- "\"GET\\s+([/\\w\\.-]*)+/?\\s+HTTP"
 
 get.code <- function(log.entry) {
   # Returns the return code of a web server log entry.
@@ -52,7 +52,7 @@ get.tuple <- function(log.entry) {
     origin <- "filter me"
   } else if(path == FALSE) {
     origin <- "filter me"
-  } else if (grepl(pattern="\\S+\\.(css|CSS|jpg|JPG|png|PNG|js|JS|gif|GIF|ico|ICO)$", x=path, perl=TRUE)) {
+  } else if (grepl(pattern="\\S+\\.\\w+$", x=path, perl=TRUE)) {
     origin <- "filter me"
   } else if (origin %in% bot.list) {
     origin <- "filter me"

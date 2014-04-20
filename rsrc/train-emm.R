@@ -5,8 +5,8 @@ library(rEMM)
 library(hash)
 
 # load the data set
-stopifnot(file.exists("../data/train.csv"))
-all.visits <- read.table("../data/train.csv", quote="\"")
+stopifnot(file.exists("../data/visits-ibm.csv"))
+all.visits <- read.table("../data/visits-ibm.csv", quote="\"")
 
 # train the model
 emm <- EMM(data=all.visits)
