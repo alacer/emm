@@ -14,9 +14,9 @@ last.request <- page.hash[[path]]
 if (! is.null(last.request)) {
   liklihoods <- predict(emm, current_state=last.request, 
                         probabilities=TRUE)
-  top.twenty <- names(sort(x=liklihoods, decreasing=TRUE)[1:20])
-  for (i in 1:20) {
-    prediction[[i]] <- toString(page.list[as.numeric(top.twenty[i])])
+  top.three <- names(sort(x=liklihoods, decreasing=TRUE)[1:3])
+  for (i in 1:3) {
+    prediction[[i]] <- toString(page.list[as.numeric(top.three[i])])
   } 
 }
 
